@@ -3,7 +3,8 @@ from sklearn.preprocessing import OneHotEncoder
 import math
 import numpy as np
 from sklearn.utils import shuffle
-from sklearn.metrics import accuracy_score,precision_score,recall_score,f1_score,roc_auc_score
+from sklearn.preprocessing import normalize
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 
 
 def weight_variable(shape):
@@ -32,17 +33,23 @@ def one_hot(integer_encoded):
     return one_hot_encoded
 
 
+
+
 ####CNN####################################################
-L1 = 64  # number of convolutions for first layer
-L2 = 128  # number of convolutions for second layer
-L3 = 512  # number of neurons for dense layer
+L1 = 16  # number of convolutions for first layer
+L2 = 32  # number of convolutions for second layer
+L3 = 128  # number of neurons for dense layer
 learning_date = 0.0001  # learning rate
-epochs = 100  # number of times we loop through training data
+epochs = 20  # number of times we loop through training data
 batch_size = 4  # number of data per batch
+display_step = 1
+loss_rec = np.zeros([epochs, 1])
+training_eval = np.zeros([epochs, 2])
 
 expression = np.loadtxt('output/otus.csv', dtype=float, delimiter=",")
 label_vec = np.array(expression[:, -1], dtype=int)
 expression = np.array(expression[:, :-1])
+expression = normalize(expression, axis=1)
 labels = []
 for l in label_vec:
     if l == 1:
@@ -94,7 +101,6 @@ w_fc2 = weight_variable([L3, classes])
 b_fc2 = bias_variable([classes])
 y_conv = tf.nn.softmax(tf.matmul(h_fc1_drop, w_fc2) + b_fc2)
 
-
 cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=y_conv, labels=ys))
 optimizer = tf.train.AdamOptimizer(learning_date).minimize(cost)
 
@@ -108,26 +114,40 @@ with tf.Session() as sess:
     total_batch = int(np.shape(x_train)[0] / batch_size)
     for epoch in range(epochs):
         avg_cost = 0.
-        avg_acc = 0.
         x_tmp, y_tmp = shuffle(x_train, y_train)
-        for i in range(total_batch-1):
-            batch_x, batch_y = x_tmp[i*batch_size:i*batch_size+batch_size], \
-                                y_tmp[i*batch_size:i*batch_size+batch_size]
+        for i in range(total_batch - 1):
+            batch_x, batch_y = x_tmp[i * batch_size:i * batch_size + batch_size], \
+                               y_tmp[i * batch_size:i * batch_size + batch_size]
             _, c, acc = sess.run([optimizer, cost, accuracy],
                                  feed_dict={xs: batch_x, ys: batch_y, keep_prob: 0.5})
-            avg_cost += c / (len(x_train) // batch_size)
-            avg_acc += acc / (len(x_train) // batch_size)
-        print("Epoch:", '%04d' % (epoch), "loss={:.9f}".format(avg_cost), "accuracy={:.9f}".format(avg_acc))
+            # Compute average loss
+            avg_cost += c / total_batch
+
+        del x_tmp
+        del y_tmp
+
+        ## Display logs per epoch step
+        if epoch % display_step == 0:
+            loss_rec[epoch] = avg_cost
+            acc, y_s = sess.run([accuracy, y_conv], feed_dict={xs: x_train, ys: y_train, keep_prob: 1})
+            auc = roc_auc_score(y_train, y_s)
+            training_eval[epoch] = [acc, auc]
+            print("Epoch:", '%d' % (epoch + 1), "cost =", "{:.9f}".format(avg_cost),
+                  "Training accuracy:", round(acc, 3), " Training auc:", round(auc, 3))
+
+        if avg_cost <= 0.1:
+            print("Early stopping.")
+            break
     y_pred = y_conv.eval(feed_dict={xs: x_test, ys: y_test, keep_prob: 1.0})
 
-    y_s = (y_pred > 0.5)
-    acc = round(accuracy_score(y_test,y_s),3)
-    auc = round(roc_auc_score(y_test, y_s),3)
+    y_pred = np.argmax(np.where(y_pred > 0.5, 1, 0), axis=1)
+    y_test = np.argmax(y_test, axis=1)  # one hot to int
+    acc = round(accuracy_score(y_test, y_pred), 3)
+    auc = round(roc_auc_score(y_test, y_pred), 3)
 
-    f1 = round(f1_score(y_test, y_s, average='macro'),3)
-    precision = round(precision_score(y_test, y_s,average='macro'),3)
-    recall = round(recall_score(y_test, y_s,average='macro'),3)
+    f1 = round(f1_score(y_test, y_pred), 3)
+    precision = round(precision_score(y_test, y_pred), 3)
+    recall = round(recall_score(y_test, y_pred), 3)
 
     print("Testing accuracy: ", acc, " Testing auc: ", auc, " Testing f1: ",
-          f1," Testing precision: ", precision, " Testing recall: ", recall)
-
+          f1, " Testing precision: ", precision, " Testing recall: ", recall)
