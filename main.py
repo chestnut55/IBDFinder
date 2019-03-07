@@ -477,14 +477,13 @@ def gedfn(x_train, x_test, y_train, y_test):
         print("Graph Embedding Networks Testing accuracy: ", acc, " Testing auc: ", auc, " Testing f1: ",
               f1, " Testing precision: ", precision, " Testing recall: ", recall)
         np.savetxt("output/l1_weights.txt", l1_weights, delimiter=",")
-        np.savetxt(out_file, var_imp, delimiter=",")
+        np.savetxt('var_ibd.csv', var_imp, delimiter=",")
     return acc, auc, f1, precision, recall
 
 
 
 
 ## load in data
-out_file = 'var_ibd.csv'
 partition_left = np.loadtxt('output/otu_adj.txt', dtype=int, delimiter=None)
 partition_right = np.loadtxt('output/mic_otu_adj.txt', dtype=int, delimiter=None)
 # partition = partition - np.diag(np.diag(partition))
