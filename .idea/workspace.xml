@@ -2,63 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38d525f4-0158-4b9d-98f2-7bc5642f52a4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/MIC/biom2mic.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/MIC/run_mic_correlation.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/biom2ml.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/rf_feature_selection.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sparcc/biom2sparcc.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/GEDFN.py" afterPath="$PROJECT_DIR$/GEDFN.py" />
-      <change beforePath="$PROJECT_DIR$/analysis_result.py" afterPath="$PROJECT_DIR$/analysis_result.py" />
-      <change beforePath="$PROJECT_DIR$/cnn.py" afterPath="$PROJECT_DIR$/CNN.py" />
-      <change beforePath="$PROJECT_DIR$/cor2adjac.py" afterPath="$PROJECT_DIR$/sparcc/cor2adjac.py" />
-      <change beforePath="$PROJECT_DIR$/cor_to_network.py" afterPath="$PROJECT_DIR$/sparcc/cor_to_network.py" />
-      <change beforePath="$PROJECT_DIR$/data/coNet_id_file.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data/coNet_metadata_file.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data/exported_out_feature_table/taxonomy.tsv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data/otu_taxonomy_table_filter.qza" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/evaluation.csv" afterPath="$PROJECT_DIR$/output/evaluation.csv" />
-      <change beforePath="$PROJECT_DIR$/evaluation_bak.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/example_adjacency.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/example_expression.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/io_util.py" afterPath="$PROJECT_DIR$/io_util.py" />
-      <change beforePath="$PROJECT_DIR$/mRMR_df.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change beforePath="$PROJECT_DIR$/mic_analysis.py" afterPath="$PROJECT_DIR$/MIC/mic_analysis.py" />
-      <change beforePath="$PROJECT_DIR$/output/control.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/cor_sparcc.out" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/cor_sparcc.out_edges.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/cor_sparcc.out_nodes.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/feature_selection_result.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/ibd.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/ibd_otus.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/ibd_otus_mic.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/l1_weights.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/mic_otu_adj" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/mic_otu_adj.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/mic_results/null_dist.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/mic_results/obs.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/mic_results/obs_dist.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/mic_results/pi0_None.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/mic_results/pval.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/mic_results/pval_None.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/mic_results/pval_adj.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/mic_results/strength.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/otu_adj" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/otu_adj.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/otus.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/pvals.one_sided.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/rf_feature_selection_result.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output/var_impo.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/plot_evaluation.py" afterPath="$PROJECT_DIR$/plot_evaluation.py" />
-      <change beforePath="$PROJECT_DIR$/plot_feature_selection.py" afterPath="$PROJECT_DIR$/plot_feature_selection.py" />
-      <change beforePath="$PROJECT_DIR$/plot_rf_feature_selection.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/plot_venn.py" afterPath="$PROJECT_DIR$/plot_venn.py" />
-      <change beforePath="$PROJECT_DIR$/read_biom.py" afterPath="$PROJECT_DIR$/read_original_biom.py" />
-      <change beforePath="$PROJECT_DIR$/run_sparcc_correlation.sh" afterPath="$PROJECT_DIR$/sparcc/run_sparcc_correlation.sh" />
-      <change beforePath="$PROJECT_DIR$/var_ibd.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/var_impo.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venn.png" afterPath="$PROJECT_DIR$/output/venn.png" />
+      <change beforePath="$PROJECT_DIR$/CNN.py" afterPath="$PROJECT_DIR$/CNN.py" />
+      <change beforePath="$PROJECT_DIR$/DFN_earlystopping.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DFN_keras.py" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -69,93 +15,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
+      <file leaf-file-name="biom2ml.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/biom2ml.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="208" column="0" lean-forward="true" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
+            <state relative-caret-position="802">
+              <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mic_analysis.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MIC/mic_analysis.py">
+      <file leaf-file-name="CNN.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GEDFN.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GEDFN.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="119" column="48" lean-forward="false" selection-start-line="119" selection-start-column="44" selection-end-line="119" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="io_util.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/io_util.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-243">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plot_evaluation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plot_evaluation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="analysis_result.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/analysis_result.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="64" column="47" lean-forward="true" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plot_feature_selection.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plot_feature_selection.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plot_venn.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/plot_venn.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="49" column="71" lean-forward="true" selection-start-line="49" selection-start-column="71" selection-end-line="49" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rf_feature_selection.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rf_feature_selection.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="79" column="24" lean-forward="false" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="24" />
+            <state relative-caret-position="-2452">
+              <caret line="48" column="44" lean-forward="false" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -227,6 +101,7 @@
         <option value="$PROJECT_DIR$/plot_venn.py" />
         <option value="$PROJECT_DIR$/plot_feature_selection.py" />
         <option value="$PROJECT_DIR$/rf_feature_selection.py" />
+        <option value="$PROJECT_DIR$/CNN.py" />
       </list>
     </option>
   </component>
@@ -278,17 +153,7 @@
             <path>
               <item name="IBDFinder" type="b2602c69:ProjectViewProjectNode" />
               <item name="IBDFinder" type="462c0819:PsiDirectoryNode" />
-              <item name="MIC" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IBDFinder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IBDFinder" type="462c0819:PsiDirectoryNode" />
               <item name="output" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IBDFinder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IBDFinder" type="462c0819:PsiDirectoryNode" />
-              <item name="sparcc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IBDFinder" type="b2602c69:ProjectViewProjectNode" />
@@ -463,9 +328,9 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295699" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="0" y="0" width="430" height="809" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43075117" sideWeight="0.7725806" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26056337" sideWeight="0.7725806" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25860214" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25860214" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295699" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -479,6 +344,28 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5140845" sideWeight="0.22741936" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295699" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="0" y="0" width="430" height="809" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43075117" sideWeight="0.7725806" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25860214" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295699" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3016432" sideWeight="0.49784946" order="7" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -516,11 +403,6 @@
           <url>file://$PROJECT_DIR$/CNN.py</url>
           <line>105</line>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/biom2ml.py</url>
-          <line>48</line>
-          <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/sparcc/cor2adjac.py</url>
@@ -823,53 +705,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/biom2ml.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MIC/mic_otu_adj.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-162">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/read_original_biom.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
-          <caret line="53" column="51" lean-forward="false" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DFN_keras.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-243">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DFN_earlystopping.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4025">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -999,6 +839,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
           <caret line="49" column="71" lean-forward="true" selection-start-line="49" selection-start-column="71" selection-end-line="49" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/read_original_biom.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="916">
+          <caret line="53" column="51" lean-forward="false" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/biom2ml.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="802">
+          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DFN_keras.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DFN_earlystopping.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2452">
+          <caret line="48" column="44" lean-forward="false" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
           <folding />
         </state>
       </provider>

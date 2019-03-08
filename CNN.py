@@ -46,7 +46,7 @@ display_step = 1
 loss_rec = np.zeros([epochs, 1])
 training_eval = np.zeros([epochs, 2])
 
-expression = np.loadtxt('output/otus.csv', dtype=float, delimiter=",")
+expression = np.loadtxt('output/ibd_otus.txt', dtype=float, delimiter=",")
 label_vec = np.array(expression[:, -1], dtype=int)
 expression = np.array(expression[:, :-1])
 expression = normalize(expression, axis=1)
