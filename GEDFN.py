@@ -18,12 +18,12 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
         # layer_1 = tf.add(tf.subtract(tf.matmul(x, weights['h1']), tf.linalg.tensor_diag_part(weights['h1'])),
         #                  biases['b1'])
         layer_1 = tf.nn.relu(layer_1)
-        # layer_1 = tf.nn.dropout(layer_1, keep_prob=keep_prob)
+        layer_1 = tf.nn.dropout(layer_1, keep_prob=0.95)
 
         layer_2 = tf.add(tf.matmul(layer_1, tf.multiply(weights['h2'], right_adj)), biases['b2'])
         # layer_2 = tf.add(tf.matmul(layer_1, weights['h2']), biases['b2'])
         layer_2 = tf.nn.relu(layer_2)
-        # layer_2 = tf.nn.dropout(layer_2, keep_prob=keep_prob)
+        layer_2 = tf.nn.dropout(layer_2, keep_prob=0.95)
 
         layer_3 = tf.add(tf.matmul(layer_2, weights['h3']), biases['b3'])
         layer_3 = tf.nn.relu(layer_3)
@@ -168,5 +168,5 @@ if __name__ == "__main__":
 
     skf = StratifiedKFold(n_splits=10, random_state=0)
     for train_idx, test_idx in skf.split(X, y):
-        x_train, x_test, y_train, y_test = X[train_idx, :], X[test_idx, :], y[train_idx], y[test_idx]
+        x_train, x_test, y_train, y_test = X.ix[train_idx, :], X.ix[test_idx, :], y[train_idx], y[test_idx]
         gedfn(x_train, x_test, to_categorical(y_train), to_categorical(y_test), left, right)

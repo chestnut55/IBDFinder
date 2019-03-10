@@ -38,16 +38,14 @@ def dfn_diag(x_train, x_test, y_train, y_test):
 
 
     def multilayer_perceptron(x, weights, biases, keep_prob):
-        layer_1 = tf.add(tf.subtract(tf.matmul(x, weights['h1']), tf.linalg.tensor_diag_part(weights['h1'])), biases['b1'])
+        # layer_1 = tf.add(tf.subtract(tf.matmul(x, weights['h1']), tf.linalg.tensor_diag_part(weights['h1'])), biases['b1'])
+        layer_1 = tf.add(tf.matmul(x, weights['h1']), biases['b1'])
         layer_1 = tf.nn.relu(layer_1)
         layer_2 = tf.add(tf.matmul(layer_1, weights['h2']), biases['b2'])
         layer_2 = tf.nn.relu(layer_2)
         layer_2 = tf.nn.dropout(layer_2, keep_prob=keep_prob)
 
         layer_3 = tf.add(tf.matmul(layer_2, weights['h3']), biases['b3'])
-        ## Do not use batch-norm
-        # layer_3 = tf.contrib.layers.batch_norm(layer_3, center=True, scale=True,
-        #                                   is_training=is_training)
         layer_3 = tf.nn.relu(layer_3)
         layer_3 = tf.nn.dropout(layer_3, keep_prob=keep_prob)
 
@@ -124,7 +122,7 @@ def dfn_diag(x_train, x_test, y_train, y_test):
                                    y_tmp[i * batch_size:i * batch_size + batch_size]
 
                 _, c = sess.run([optimizer, cost], feed_dict={x: batch_x, y: batch_y,
-                                                              keep_prob: 0.9,
+                                                              keep_prob: 0.8,
                                                               lr: learning_rate
                                                               })
                 # Compute average loss
@@ -139,8 +137,8 @@ def dfn_diag(x_train, x_test, y_train, y_test):
                 acc, y_s = sess.run([accuracy, y_score], feed_dict={x: x_train, y: y_train, keep_prob: 1})
                 auc = metrics.roc_auc_score(y_train, y_s)
                 training_eval[epoch] = [acc, auc]
-                # print("Epoch:", '%d' % (epoch + 1), "cost =", "{:.9f}".format(avg_cost),
-                #       "Training accuracy:", round(acc, 3), " Training auc:", round(auc, 3))
+                print("Epoch:", '%d' % (epoch + 1), "cost =", "{:.9f}".format(avg_cost),
+                      "Training accuracy:", round(acc, 3), " Training auc:", round(auc, 3))
 
             if avg_cost <= 0.1:
                 # print("Early stopping.")
@@ -272,8 +270,8 @@ def dfn(x_train, x_test, y_train, y_test):
                 acc, y_s = sess.run([accuracy, y_score], feed_dict={x: x_train, y: y_train, keep_prob: 1})
                 auc = metrics.roc_auc_score(y_train, y_s)
                 training_eval[epoch] = [acc, auc]
-                # print("Epoch:", '%d' % (epoch + 1), "cost =", "{:.9f}".format(avg_cost),
-                #       "Training accuracy:", round(acc, 3), " Training auc:", round(auc, 3))
+                print("Epoch:", '%d' % (epoch + 1), "cost =", "{:.9f}".format(avg_cost),
+                      "Training accuracy:", round(acc, 3), " Training auc:", round(auc, 3))
 
             if avg_cost < 0.1:
                 # print("Early stopping.")
@@ -300,9 +298,9 @@ def traning(X, y, left, right):
     df = pd.DataFrame(columns=['accuracy', 'auc', 'F1', 'precision', 'recall'])
     skf = StratifiedKFold(n_splits=10, random_state=0)
     for train_idx, test_idx in skf.split(X, y):
-        x_train, x_test, y_train, y_test = X[train_idx, :], X[test_idx, :], y[train_idx], y[test_idx]
+        x_train, x_test, y_train, y_test = X.ix[train_idx, :], X.ix[test_idx, :], y[train_idx], y[test_idx]
 
-        # dfn_diag(x_train, x_test, y_train, y_test)
+        # df.loc[len(df)] = dfn_diag(x_train, x_test, to_categorical(y_train), to_categorical(y_test))
         df.loc[len(df)] = dfn(x_train, x_test, to_categorical(y_train), to_categorical(y_test))
         df.loc[len(df)] = gedfn(x_train, x_test, to_categorical(y_train), to_categorical(y_test), left, right)
         df.loc[len(df)] = rf(x_train, x_test, y_train, y_test)
