@@ -35,16 +35,20 @@ def biom2ml():
     filter_ibd = lambda v, i_, m: [x for x in ibd if x == i_]
     ibd_group = ibd_abundance_table.filter(filter_ibd, axis='sample', inplace=False)
     df_ibd = ibd_group.to_dataframe(dense=True)
+    df_ibd = df_ibd.sample(frac=0.5, random_state=1234, axis=1)
+    # df_ibd = ibd_group.to_dataframe(dense=True)
     # control group
     filter_control = lambda v, i_, m: [x for x in control if x == i_]
     control_group = ibd_abundance_table.filter(filter_control, axis='sample', inplace=False)
     df_control = control_group.to_dataframe(dense=True)
+    # df_control = df_control.sample(frac=2, replace=True, random_state=1234, axis=1)
+    # df_control = control_group.to_dataframe(dense=True)
 
     labels = [1] * len(df_ibd.columns.values) + [0] * len(df_control.columns.values)
 
     results = pd.concat([df_ibd, df_control], axis=1).T
     # values with all zero for the variable are removed
-    results = results.loc[:, (results != 0).any(axis=0)]
+    # results = results.loc[:, (results != 0).any(axis=0)]
 
     results["label"] = labels
     # output for machine learning models

@@ -1,0 +1,7 @@
+library(MicrobeDS)
+library(ape)
+library(phyloseq)
+agg<-tax_glom(RISK_CCFA,taxrank = 'Genus')
+tree<-phy_tree(agg)
+tips_distances<-cophenetic(tree)
+write.table(tips_distances,'tips_distances.csv',sep='\t',col.names=tree$tip.label,row.names=tree$tip.label)

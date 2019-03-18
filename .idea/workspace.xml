@@ -2,21 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38d525f4-0158-4b9d-98f2-7bc5642f52a4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/MIC/diseased_results/null_dist.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/MIC/diseased_results/obs.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/MIC/diseased_results/obs_dist.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/MIC/diseased_results/pi0_None.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/MIC/diseased_results/pval.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/MIC/diseased_results/pval_None.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/MIC/diseased_results/pval_adj.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/MIC/normal_results/null_dist.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/MIC/normal_results/obs.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/MIC/normal_results/obs_dist.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/MIC/normal_results/pi0_None.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/MIC/normal_results/pval.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/MIC/normal_results/pval_None.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/MIC/normal_results/pval_adj.txt" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/qiang.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/DFN.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/nearest_neighbors.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/output/tips_distances.csv" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/plot_curve.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sparcc/diseased_results/cor_sparcc.out_edges.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sparcc/normal_results/cor_sparcc.out_edges.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sparcc/sparcc_joined_adj.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/GEDFN.py" afterPath="$PROJECT_DIR$/GEDFN.py" />
+      <change beforePath="$PROJECT_DIR$/MIC/adj_mic.py" afterPath="$PROJECT_DIR$/MIC/adj_mic.py" />
+      <change beforePath="$PROJECT_DIR$/MIC/mic_otu_adj.txt" afterPath="$PROJECT_DIR$/MIC/mic_otu_adj.txt" />
+      <change beforePath="$PROJECT_DIR$/analysis_result.py" afterPath="$PROJECT_DIR$/analysis_result.py" />
+      <change beforePath="$PROJECT_DIR$/biom2ml.py" afterPath="$PROJECT_DIR$/biom2ml.py" />
+      <change beforePath="$PROJECT_DIR$/io_util.py" afterPath="$PROJECT_DIR$/utils.py" />
+      <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change beforePath="$PROJECT_DIR$/output/evaluation.csv" afterPath="$PROJECT_DIR$/output/evaluation.csv" />
+      <change beforePath="$PROJECT_DIR$/output/feature_selection_result.csv" afterPath="$PROJECT_DIR$/output/feature_selection_result.csv" />
+      <change beforePath="$PROJECT_DIR$/output/ibd_otus.txt" afterPath="$PROJECT_DIR$/output/ibd_otus.txt" />
+      <change beforePath="$PROJECT_DIR$/output/rf_feature_selection_result.csv" afterPath="$PROJECT_DIR$/output/rf_feature_selection_result.csv" />
       <change beforePath="$PROJECT_DIR$/output/var_ibd.csv" afterPath="$PROJECT_DIR$/output/var_ibd.csv" />
+      <change beforePath="$PROJECT_DIR$/output/venn.png" afterPath="$PROJECT_DIR$/output/venn.png" />
+      <change beforePath="$PROJECT_DIR$/plot_feature_selection.py" afterPath="$PROJECT_DIR$/plot_feature_selection.py" />
+      <change beforePath="$PROJECT_DIR$/plot_venn.py" afterPath="$PROJECT_DIR$/plot_venn.py" />
+      <change beforePath="$PROJECT_DIR$/rf_feature_selection.py" afterPath="$PROJECT_DIR$/rf_feature_selection.py" />
+      <change beforePath="$PROJECT_DIR$/sparcc/cor2adjac.py" afterPath="$PROJECT_DIR$/sparcc/cor2adjac.py" />
+      <change beforePath="$PROJECT_DIR$/sparcc/cor_sparcc.out_edges.txt" afterPath="$PROJECT_DIR$/sparcc/cor_sparcc.out_edges.txt" />
+      <change beforePath="$PROJECT_DIR$/sparcc/sparcc_otu_adj.txt" afterPath="$PROJECT_DIR$/sparcc/sparcc_otu_adj.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,32 +40,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.py">
+      <file leaf-file-name="plot_curve.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plot_curve.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="296" column="31" lean-forward="true" selection-start-line="296" selection-start-column="31" selection-end-line="296" selection-end-column="31" />
+            <state relative-caret-position="349">
+              <caret line="56" column="32" lean-forward="true" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GEDFN.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GEDFN.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GEDFN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+            <state relative-caret-position="378">
+              <caret line="27" column="51" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plot_evaluation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plot_evaluation.py">
+      <file leaf-file-name="DFN.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DFN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+            <state relative-caret-position="916">
+              <caret line="53" column="15" lean-forward="true" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nearest_neighbors.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nearest_neighbors.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sparcc_joined_adj.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sparcc/sparcc_joined_adj.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="65" column="26" lean-forward="false" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,6 +121,11 @@
       <find>partition_left</find>
       <find>preprocessing</find>
       <find>to_categorical</find>
+      <find>4436552</find>
+      <find>139743</find>
+      <find>g__Methanobacterium</find>
+      <find>k__Archaea;p__Euryarchaeota;c__Methanobacteria;o__Methanobacteriales;f__Methanobacteriaceae;g__Methanobacterium</find>
+      <find>k__Bacteria;p__Actinobacteria;c__Actinobacteria;o__Actinomycetales;f__Microbacteriaceae;g__</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -96,7 +138,6 @@
         <option value="$PROJECT_DIR$/run_sparcc_correlation.sh" />
         <option value="$PROJECT_DIR$/cor2adjac.py" />
         <option value="$PROJECT_DIR$/keras-cnn-inspired-by-lenet-5.py" />
-        <option value="$PROJECT_DIR$/DFN.py" />
         <option value="$PROJECT_DIR$/DFN_keras.py" />
         <option value="$PROJECT_DIR$/cnn_keras.py" />
         <option value="$PROJECT_DIR$/cnn.py" />
@@ -110,33 +151,42 @@
         <option value="$PROJECT_DIR$/read_biom.py" />
         <option value="$PROJECT_DIR$/MIC/cmd" />
         <option value="$PROJECT_DIR$/MIC/run_mic_correlation.sh" />
-        <option value="$PROJECT_DIR$/biom2ml.py" />
-        <option value="$PROJECT_DIR$/analysis_result.py" />
         <option value="$PROJECT_DIR$/plot_evaluation.py" />
         <option value="$PROJECT_DIR$/plot_rf_feature_selection.py" />
         <option value="$PROJECT_DIR$/sparcc/run_sparcc_correlation.sh" />
-        <option value="$PROJECT_DIR$/sparcc/cor2adjac.py" />
         <option value="$PROJECT_DIR$/MIC/mic_analysis.py" />
-        <option value="$PROJECT_DIR$/io_util.py" />
-        <option value="$PROJECT_DIR$/plot_venn.py" />
-        <option value="$PROJECT_DIR$/plot_feature_selection.py" />
-        <option value="$PROJECT_DIR$/rf_feature_selection.py" />
         <option value="$PROJECT_DIR$/CNN.py" />
         <option value="$PROJECT_DIR$/sparcc/diseased_normal_otu_sparcc.py" />
         <option value="$PROJECT_DIR$/split_diseased_normal_otus.py" />
         <option value="$PROJECT_DIR$/MIC/run_mic_diseased_correlation.sh" />
         <option value="$PROJECT_DIR$/MIC/run_mic_normal_correlation.sh" />
         <option value="$PROJECT_DIR$/MIC/joined_adj_mic.py" />
+        <option value="$PROJECT_DIR$/io_util.py" />
+        <option value="$PROJECT_DIR$/sparcc/DFN.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/plot_venn.py" />
+        <option value="$PROJECT_DIR$/analysis_result.py" />
+        <option value="$PROJECT_DIR$/rf_feature_selection.py" />
+        <option value="$PROJECT_DIR$/plot_feature_selection.py" />
+        <option value="$PROJECT_DIR$/plot_learning_curves.py" />
+        <option value="$PROJECT_DIR$/phy_io.py" />
+        <option value="$PROJECT_DIR$/MIC/adj_mic.py" />
+        <option value="$PROJECT_DIR$/sparcc/cor2adjac.py" />
+        <option value="$PROJECT_DIR$/sparcc/sparcc_joined_adj.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
+        <option value="$PROJECT_DIR$/nearest_neighbors.py" />
+        <option value="$PROJECT_DIR$/biom2ml.py" />
+        <option value="$PROJECT_DIR$/plot_curve.py" />
+        <option value="$PROJECT_DIR$/DFN.py" />
         <option value="$PROJECT_DIR$/GEDFN.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1" />
-    <option name="y" value="-11" />
-    <option name="width" value="1922" />
-    <option name="height" value="1017" />
+    <option name="x" value="-63" />
+    <option name="y" value="436" />
+    <option name="width" value="1918" />
+    <option name="height" value="973" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -169,7 +219,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,24 +229,28 @@
             <path>
               <item name="IBDFinder" type="b2602c69:ProjectViewProjectNode" />
               <item name="IBDFinder" type="462c0819:PsiDirectoryNode" />
-              <item name="MIC" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IBDFinder" type="b2602c69:ProjectViewProjectNode" />
               <item name="IBDFinder" type="462c0819:PsiDirectoryNode" />
               <item name="MIC" type="462c0819:PsiDirectoryNode" />
-              <item name="diseased_results" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IBDFinder" type="b2602c69:ProjectViewProjectNode" />
               <item name="IBDFinder" type="462c0819:PsiDirectoryNode" />
-              <item name="MIC" type="462c0819:PsiDirectoryNode" />
-              <item name="normal_results" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IBDFinder" type="b2602c69:ProjectViewProjectNode" />
               <item name="IBDFinder" type="462c0819:PsiDirectoryNode" />
               <item name="sparcc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IBDFinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IBDFinder" type="462c0819:PsiDirectoryNode" />
+              <item name="sparcc" type="462c0819:PsiDirectoryNode" />
+              <item name="diseased_results" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IBDFinder" type="b2602c69:ProjectViewProjectNode" />
@@ -208,24 +261,27 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/MIC" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PopPhy-CNN" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/" />
       <recent name="$PROJECT_DIR$/output" />
+      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$/" />
       <recent name="$PROJECT_DIR$/sparcc" />
       <recent name="$PROJECT_DIR$/mRMR" />
-      <recent name="$PROJECT_DIR$/MIC" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sparcc" />
+      <recent name="$PROJECT_DIR$/sparcc/diseased_results" />
+      <recent name="$PROJECT_DIR$/sparcc/normal_results" />
       <recent name="$PROJECT_DIR$/MIC" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/output" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -240,44 +296,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="adj_mic" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MIC" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="IBDFinder" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MIC/adj_mic.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="joined_adj_mic" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MIC" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="IBDFinder" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MIC/joined_adj_mic.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.GEDFN">
+    <configuration name="DFN" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -289,13 +309,13 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="IBDFinder" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DFN.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="plot_evaluation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="GEDFN" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -307,13 +327,13 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="IBDFinder" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plot_evaluation.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GEDFN.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="plot_venn" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="biom2ml" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -325,26 +345,62 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="IBDFinder" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plot_venn.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/biom2ml.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="plot_curve" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="IBDFinder" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plot_curve.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="sparcc_joined_adj" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sparcc" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="IBDFinder" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sparcc/sparcc_joined_adj.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.adj_mic" />
-      <item index="1" class="java.lang.String" itemvalue="Python.joined_adj_mic" />
-      <item index="2" class="java.lang.String" itemvalue="Python.main" />
-      <item index="3" class="java.lang.String" itemvalue="Python.plot_evaluation" />
-      <item index="4" class="java.lang.String" itemvalue="Python.plot_venn" />
+      <item index="0" class="java.lang.String" itemvalue="Python.plot_curve" />
+      <item index="1" class="java.lang.String" itemvalue="Python.biom2ml" />
+      <item index="2" class="java.lang.String" itemvalue="Python.sparcc_joined_adj" />
+      <item index="3" class="java.lang.String" itemvalue="Python.DFN" />
+      <item index="4" class="java.lang.String" itemvalue="Python.GEDFN" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.main" />
-        <item index="1" class="java.lang.String" itemvalue="Python.plot_evaluation" />
-        <item index="2" class="java.lang.String" itemvalue="Python.plot_venn" />
-        <item index="3" class="java.lang.String" itemvalue="Python.joined_adj_mic" />
-        <item index="4" class="java.lang.String" itemvalue="Python.adj_mic" />
+        <item index="0" class="java.lang.String" itemvalue="Python.GEDFN" />
+        <item index="1" class="java.lang.String" itemvalue="Python.plot_curve" />
+        <item index="2" class="java.lang.String" itemvalue="Python.DFN" />
+        <item index="3" class="java.lang.String" itemvalue="Python.biom2ml" />
+        <item index="4" class="java.lang.String" itemvalue="Python.sparcc_joined_adj" />
       </list>
     </recent_temporary>
   </component>
@@ -365,20 +421,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-11" width="1922" height="1017" extended-state="6" />
+    <frame x="0" y="-4" width="1920" height="1009" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18172044" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18709677" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295699" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5140845" sideWeight="0.22741936" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58215964" sideWeight="0.23064516" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54460096" sideWeight="0.7693548" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45657277" sideWeight="0.7725806" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29460093" sideWeight="0.49784946" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29107982" sideWeight="0.49784946" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -393,22 +449,22 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5140845" sideWeight="0.22741936" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58215964" sideWeight="0.23064516" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295699" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="0" y="0" width="430" height="809" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54460096" sideWeight="0.7693548" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3931925" sideWeight="0.7725806" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18172044" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18709677" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295699" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29460093" sideWeight="0.49784946" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29107982" sideWeight="0.49784946" order="7" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -449,14 +505,34 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MIC/joined_adj_mic.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/plot_curve.py</url>
+          <line>143</line>
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/biom2ml.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/sparcc/cor2adjac.py</url>
-          <line>4</line>
-          <option name="timeStamp" value="91" />
+          <line>11</line>
+          <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/MIC/adj_mic.py</url>
-          <line>4</line>
-          <option name="timeStamp" value="93" />
+          <line>6</line>
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GEDFN.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="143" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -466,73 +542,252 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="102" />
+      <option name="time" value="144" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>len(normal_mic_strength)</expression-string>
+        <expression-string>x</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>len(diseased_mic_strength)</expression-string>
+        <expression-string>len(df)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>len(unique_nodes)</expression-string>
+        <expression-string>results</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>unique_nodes</expression-string>
+        <expression-string>column_name==row_name</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>mic_strength</expression-string>
+        <expression-string>len(mic_strength)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>normal_group</expression-string>
+        <expression-string>df</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>diseased_group</expression-string>
+        <expression-string>nodes</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>otus</expression-string>
+        <expression-string>df_</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>split_diseased_normal, diseased_normal_otu_sparcc.py:9</expression-string>
+        <expression-string>individual_neighbors</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/anaconda3/envs/DL_2018_1_23/lib/python3.6/site-packages/matplotlib_venn/_venn3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3592">
+          <caret line="298" column="9" lean-forward="false" selection-start-line="298" selection-start-column="4" selection-end-line="298" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plot_venn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/feature_selection_result.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/DL_2018_1_23/lib/python3.6/site-packages/sklearn/svm/classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="572" column="41" lean-forward="false" selection-start-line="572" selection-start-column="38" selection-end-line="572" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/DL_2018_1_23/lib/python3.6/site-packages/sklearn/model_selection/_validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-863">
+          <caret line="236" column="4" lean-forward="false" selection-start-line="236" selection-start-column="4" selection-end-line="236" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis_result.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plot_feature_selection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rf_feature_selection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="60" column="34" lean-forward="true" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/output/venn.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/output/cor_sparcc.out_edges.txt" />
-    <entry file="file://$PROJECT_DIR$/output/cor_sparcc.out_nodes.txt" />
-    <entry file="file://$PROJECT_DIR$/output/ibd_otus.csv" />
-    <entry file="file://$PROJECT_DIR$/data/coNet_metadata_file.txt" />
-    <entry file="file://$USER_HOME$/anaconda3/envs/DL_2018_1_23/lib/python3.6/site-packages/biom/parse.py">
+    <entry file="file://$USER_HOME$/anaconda3/envs/DL_2018_1_23/lib/python3.6/site-packages/numpy/lib/npyio.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="757">
-          <caret line="629" column="4" lean-forward="false" selection-start-line="629" selection-start-column="4" selection-end-line="629" selection-end-column="4" />
+        <state relative-caret-position="167">
+          <caret line="1137" column="33" lean-forward="true" selection-start-line="1137" selection-start-column="22" selection-end-line="1137" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sparcc/test.txt" />
+    <entry file="file://$PROJECT_DIR$/MIC/run_mic_correlation.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/DL_2018_1_23/lib/python3.6/site-packages/newick.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-623">
+          <caret line="403" column="47" lean-forward="false" selection-start-line="403" selection-start-column="33" selection-end-line="403" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phy_io.py" />
+    <entry file="file://$PROJECT_DIR$/data/mapping_file.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plot_learning_curves.py" />
+    <entry file="file://$USER_HOME$/anaconda3/envs/DL_2018_1_23/lib/python3.6/site-packages/Bio/Phylo/_io.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/tree.txt" />
+    <entry file="file://$PROJECT_DIR$/data/tree.nwk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/DL_2018_1_23/lib/python3.6/site-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-134">
+          <caret line="3944" column="8" lean-forward="false" selection-start-line="3944" selection-start-column="8" selection-end-line="3944" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="1659" column="46" lean-forward="true" selection-start-line="1659" selection-start-column="46" selection-end-line="1659" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/DL_2018_1_23/lib/python3.6/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/ibd_otus.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="0" column="8771" lean-forward="false" selection-start-line="0" selection-start-column="8768" selection-end-line="0" selection-end-column="8771" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/taxonomy.tsv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/26687502/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="4311" column="8" lean-forward="false" selection-start-line="4311" selection-start-column="8" selection-end-line="4311" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/DL_2018_1_23/lib/python3.6/site-packages/tensorflow/python/ops/nn_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-53">
+          <caret line="2049" column="24" lean-forward="false" selection-start-line="2049" selection-start-column="15" selection-end-line="2049" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/DL_2018_1_23/lib/python3.6/site-packages/tensorflow/python/ops/random_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2726">
+          <caret line="137" column="4" lean-forward="false" selection-start-line="137" selection-start-column="4" selection-end-line="137" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tips_distances.R">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/tips_distances.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/phy_neighbors.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2808">
+          <caret line="0" column="33187" lean-forward="true" selection-start-line="0" selection-start-column="33187" selection-end-line="0" selection-end-column="33187" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -540,248 +795,170 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/output/control.csv" />
-    <entry file="file://$PROJECT_DIR$/output/ibd_otus_mic.txt" />
-    <entry file="file://$PROJECT_DIR$/example_adjacency.txt" />
-    <entry file="file://$PROJECT_DIR$/var_impo.csv" />
-    <entry file="file://$PROJECT_DIR$/output/var_ibd.csv">
+    <entry file="file://$PROJECT_DIR$/sparcc/biom2sparcc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="782" column="21" lean-forward="false" selection-start-line="782" selection-start-column="2" selection-end-line="782" selection-end-column="21" />
+        <state relative-caret-position="405">
+          <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/evaluation_bak.csv" />
-    <entry file="file://$PROJECT_DIR$/mRMR/mRMR_df.csv" />
     <entry file="file://$PROJECT_DIR$/sparcc/cor_to_network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1234">
-          <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/output/ibd_otus_ml.txt" />
-    <entry file="file://$PROJECT_DIR$/MIC/cmd" />
-    <entry file="file://$PROJECT_DIR$/MIC/mic_otu_adj" />
-    <entry file="file://$USER_HOME$/anaconda3/envs/DL_2018_1_23/lib/python3.6/site-packages/matplotlib/pyplot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-782">
-          <caret line="1041" column="4" lean-forward="false" selection-start-line="1041" selection-start-column="4" selection-end-line="1041" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MIC/results/strength.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/DL_2018_1_23/lib/python3.6/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/DL_2018_1_23/lib/python3.6/site-packages/pandas/core/frame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-274">
-          <caret line="1433" column="47" lean-forward="false" selection-start-line="1433" selection-start-column="42" selection-end-line="1433" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/output/ibd_otus.txt">
+    <entry file="file://$PROJECT_DIR$/sparcc/cor_sparcc.out_edges.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-501339">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analysis_result.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="64" column="47" lean-forward="true" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rf_feature_selection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="79" column="24" lean-forward="false" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/read_original_biom.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="916">
-          <caret line="53" column="51" lean-forward="false" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DFN_keras.py" />
-    <entry file="file://$PROJECT_DIR$/DFN_earlystopping.py" />
-    <entry file="file://$PROJECT_DIR$/MIC/biom2mic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sparcc/cor2adjac.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/io_util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="62" column="23" lean-forward="false" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sparcc/sparcc_otu_adj.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1620">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/biom2ml.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1042">
-          <caret line="50" column="35" lean-forward="false" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/output/normal_sparcc.txt" />
-    <entry file="file://$PROJECT_DIR$/output/diseased_sparcc.txt" />
-    <entry file="file://$PROJECT_DIR$/sparcc/biom2sparcc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plot_feature_selection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MIC/ibd_otus_mic.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41769">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MIC/run_mic_correlation.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MIC/run_mic_diseased_correlation.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MIC/run_mic_normal_correlation.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MIC/adj_mic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="12" />
+        <state relative-caret-position="162">
+          <caret line="7" column="73" lean-forward="false" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MIC/mic_otu_adj.txt">
+    <entry file="file://$PROJECT_DIR$/sparcc/normal_results/cor_sparcc.out_edges.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-590689">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MIC/joined_adj_mic.py">
+    <entry file="file://$PROJECT_DIR$/sparcc/diseased_results/cor_sparcc.out_edges.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="19" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sparcc/run_sparcc_correlation.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+        <state relative-caret-position="374">
+          <caret line="30" column="122" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="122" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/split_diseased_normal_otus.py">
+    <entry file="file://$PROJECT_DIR$/sparcc/cor2adjac.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="-621">
+          <caret line="10" column="36" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MIC/joined_adj_mic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="25" column="58" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#19#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="25" column="26" lean-forward="false" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#18#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roc_curve.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/roc_curve.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nearest_neighbors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sparcc/sparcc_joined_adj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="65" column="26" lean-forward="false" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/DL_2018_1_23/lib/python3.6/site-packages/pandas/core/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-213">
+          <caret line="4704" column="53" lean-forward="true" selection-start-line="4704" selection-start-column="40" selection-end-line="4704" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plot_venn.py">
+    <entry file="file://$PROJECT_DIR$/biom2ml.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="23" column="48" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+        <state relative-caret-position="307">
+          <caret line="35" column="51" lean-forward="false" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plot_evaluation.py">
+    <entry file="file://$USER_HOME$/anaconda3/envs/DL_2018_1_23/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+        <state relative-caret-position="271">
+          <caret line="1728" column="4" lean-forward="false" selection-start-line="1728" selection-start-column="4" selection-end-line="1728" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plot_curve.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="56" column="32" lean-forward="true" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DFN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="916">
+          <caret line="53" column="15" lean-forward="true" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GEDFN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="296" column="31" lean-forward="true" selection-start-line="296" selection-start-column="31" selection-end-line="296" selection-end-column="31" />
+        <state relative-caret-position="378">
+          <caret line="27" column="51" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="51" />
           <folding />
         </state>
       </provider>

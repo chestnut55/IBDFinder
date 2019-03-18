@@ -4,11 +4,11 @@ import numpy as np
 import tensorflow as tf
 from keras.utils import to_categorical
 from sklearn import metrics
-from sklearn.metrics import recall_score, f1_score, roc_auc_score, average_precision_score
+from sklearn.metrics import recall_score, f1_score, roc_auc_score, precision_score
 from sklearn.model_selection import StratifiedKFold
 from sklearn.utils import shuffle
 
-import io_util
+import utils
 
 
 def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
@@ -18,16 +18,20 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
         # layer_1 = tf.add(tf.subtract(tf.matmul(x, weights['h1']), tf.linalg.tensor_diag_part(weights['h1'])),
         #                  biases['b1'])
         layer_1 = tf.nn.relu(layer_1)
-        layer_1 = tf.nn.dropout(layer_1, keep_prob=0.95)
+        # layer_1 = tf.nn.dropout(layer_1, keep_prob=keep_prob)
 
-        layer_2 = tf.add(tf.matmul(layer_1, tf.multiply(weights['h2'], right_adj)), biases['b2'])
-        # layer_2 = tf.add(tf.matmul(layer_1, weights['h2']), biases['b2'])
+        # layer_2 = tf.add(tf.matmul(layer_1, tf.multiply(weights['h2'], right_adj)), biases['b2'])
+        layer_2 = tf.add(tf.matmul(layer_1, weights['h2']), biases['b2'])
         layer_2 = tf.nn.relu(layer_2)
-        layer_2 = tf.nn.dropout(layer_2, keep_prob=0.95)
+        layer_2 = tf.nn.dropout(layer_2, keep_prob=keep_prob)
 
         layer_3 = tf.add(tf.matmul(layer_2, weights['h3']), biases['b3'])
         layer_3 = tf.nn.relu(layer_3)
         layer_3 = tf.nn.dropout(layer_3, keep_prob=keep_prob)
+
+        # layer_4 = tf.add(tf.matmul(layer_3, weights['h4']), biases['b4'])
+        # layer_4 = tf.nn.relu(layer_4)
+        # layer_4 = tf.nn.dropout(layer_4, keep_prob=keep_prob)
 
         out_layer = tf.matmul(layer_3, weights['out']) + biases['out']
         return out_layer, weights['h1']
@@ -37,8 +41,8 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
     ## hyper-parameters and settings
     L2 = False
     learning_rate = 0.001
-    training_epochs = 100
-    batch_size = 8
+    training_epochs = 200
+    batch_size = 32
     display_step = 1
 
     ## the constant limit for feature selection
@@ -52,7 +56,8 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
     n_features = np.shape(x_train)[1]
     n_hidden_1 = n_features
     n_hidden_2 = n_features
-    n_hidden_3 = 64
+    n_hidden_3 = 32
+    n_hidden_4 = 16
     n_classes = 2
 
     ## initiate training logs
@@ -68,6 +73,7 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
         'h1': tf.Variable(tf.truncated_normal(shape=[n_features, n_hidden_1], stddev=0.1)),
         'h2': tf.Variable(tf.truncated_normal(shape=[n_hidden_1, n_hidden_2], stddev=0.1)),
         'h3': tf.Variable(tf.truncated_normal(shape=[n_hidden_2, n_hidden_3], stddev=0.1)),
+        # 'h4': tf.Variable(tf.truncated_normal(shape=[n_hidden_3, n_hidden_4], stddev=0.1)),
         'out': tf.Variable(tf.truncated_normal(shape=[n_hidden_3, n_classes], stddev=0.1))
 
     }
@@ -76,6 +82,7 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
         'b1': tf.Variable(tf.zeros([n_hidden_1])),
         'b2': tf.Variable(tf.zeros([n_hidden_2])),
         'b3': tf.Variable(tf.zeros([n_hidden_3])),
+        # 'b4': tf.Variable(tf.zeros([n_hidden_4])),
         'out': tf.Variable(tf.zeros([n_classes]))
     }
 
@@ -86,7 +93,7 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
     cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=pred, labels=y))
     if L2:
         reg = tf.nn.l2_loss(weights['h1']) + tf.nn.l2_loss(weights['h2']) + \
-              tf.nn.l2_loss(weights['h3']) + tf.nn.l2_loss(weights['out'])
+              tf.nn.l2_loss(weights['h3']) + tf.nn.l2_loss(weights['h4']) + tf.nn.l2_loss(weights['out'])
         cost = tf.reduce_mean(cost + 0.01 * reg)
     optimizer = tf.train.AdamOptimizer(learning_rate=lr).minimize(cost)
 
@@ -99,8 +106,8 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
     # var_right = tf.reduce_sum(tf.abs(weights['h2']), 1)
 
     var_left = tf.reduce_sum(tf.abs(tf.multiply(weights['h1'], left_adj)), 0)
-    # var_right = tf.reduce_sum(tf.abs(weights['h2']), 1)
-    var_right = tf.reduce_sum(tf.abs(tf.multiply(weights['h2'], right_adj)), 0)
+    var_right = tf.reduce_sum(tf.abs(weights['h2']), 1)
+    # var_right = tf.reduce_sum(tf.abs(tf.multiply(weights['h2'], right_adj)), 0)
     var_importance = tf.add(tf.multiply(tf.multiply(var_left, gamma_numerator), 1. / gamma_denominator),
                             tf.multiply(tf.multiply(var_right, gamma_numerator), 1. / gamma_denominator))
 
@@ -111,14 +118,15 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
         ## Training cycle
         for epoch in range(training_epochs):
             avg_cost = 0.
-            x_tmp, y_tmp = shuffle(x_train, y_train)
+            # x_tmp, y_tmp = shuffle(x_train, y_train)
+            x_tmp, y_tmp = x_train, y_train
             # Loop over all batches
             for i in range(total_batch - 1):
                 batch_x, batch_y = x_tmp[i * batch_size:i * batch_size + batch_size], \
                                    y_tmp[i * batch_size:i * batch_size + batch_size]
 
                 _, c = sess.run([optimizer, cost], feed_dict={x: batch_x, y: batch_y,
-                                                              keep_prob: 0.9,
+                                                              keep_prob: 0.5,
                                                               lr: learning_rate
                                                               })
                 # Compute average loss
@@ -138,35 +146,36 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
                       "Training accuracy:", round(acc, 3), " Training auc:", round(auc, 3))
 
             if avg_cost < 0.1:
-                # print("Early stopping.")
+                print("Early stopping.")
                 break
 
         ## Testing cycle
-        acc, y_s, l1_weights = sess.run([accuracy, y_score, layer1_weights],
+        acc, y_s, l1_weights, cost = sess.run([accuracy, y_score, layer1_weights, cost],
                                         feed_dict={x: x_test, y: y_test, keep_prob: 1})
 
         auc = round(roc_auc_score(y_test, y_s), 3)
-        precision = round(average_precision_score(y_test, y_s), 3)
 
-        y_s = np.argmax(y_s, axis=1)
+        y_pred = np.argmax(y_s, axis=1)
         y_test = np.argmax(y_test, axis=1)  # one hot to int
-        f1 = round(f1_score(y_test, y_s), 3)
-        recall = round(recall_score(y_test, y_s), 3)
+        f1 = round(f1_score(y_test, y_pred), 3)
+        precision = round(precision_score(y_test, y_pred), 3)
+        recall = round(recall_score(y_test, y_pred), 3)
 
         var_imp = sess.run([var_importance])
         var_imp = np.reshape(var_imp, [n_features])
         print("Graph Embedding Networks Testing accuracy: ", acc, " Testing auc: ", auc, " Testing f1: ",
-              f1, " Testing precision: ", precision, " Testing recall: ", recall)
+              f1, " Testing precision: ", precision," Testing recall: ", recall," Testing cost: ", cost)
         # np.savetxt("output/l1_weights.txt", l1_weights, delimiter=",")
         np.savetxt('output/var_ibd.csv', var_imp, delimiter=",")
-    return acc, auc, f1, precision, recall
+    return acc, auc, f1, precision, recall, y_s[:, 1]
 
 
 if __name__ == "__main__":
 
-    X, y, left, right = io_util.load()
+    X, y, left, right = utils.load()
 
     skf = StratifiedKFold(n_splits=10, random_state=0)
     for train_idx, test_idx in skf.split(X, y):
         x_train, x_test, y_train, y_test = X.ix[train_idx, :], X.ix[test_idx, :], y[train_idx], y[test_idx]
         gedfn(x_train, x_test, to_categorical(y_train), to_categorical(y_test), left, right)
+        break

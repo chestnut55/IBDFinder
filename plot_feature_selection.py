@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 
 def plot():
-    df = pd.read_csv('output/rf_feature_selection_result.csv', header=0, sep=',', index_col=0)
+    df = pd.read_csv('output/feature_selection_result.csv', header=0, sep=',', index_col=0)
 
     _df = df[['accuracy', 'auc', 'F1', 'precision', 'recall']]
 

@@ -10,12 +10,11 @@ from sklearn.feature_selection import RFE
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from GEDFN import gedfn
-import io_util
+import utils
 
 
 def plot_venn(X, y, left, right):
-
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, shuffle=True)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=0)
 
     # RFE
     model = LogisticRegression()
@@ -41,24 +40,25 @@ def plot_venn(X, y, left, right):
     nodes = X.columns.values.tolist()
     gedfn_results = pd.Series(var_ibd, index=nodes).sort_values(ascending=False).index.values
 
-    fig, axes = plt.subplots(2, 2, figsize=(20, 20))
+    fig, axes = plt.subplots(2, 2, figsize=(10, 10))
 
     venn3([set(gedfn_results[:100]), set(rf_results[:100]), set(rfe_results)],
-          set_labels=('GEDFN', 'Random Forest', 'RFE'), ax=axes[0][0])
+          set_labels=('GEDFN', 'RF', 'RFE'), set_colors=('r', 'g', 'c'), ax=axes[0][0])
 
     venn3([set(gedfn_results[:100]), set(rf_results[:100]), set(mRMR_results)],
-          set_labels=('GEDFN', 'Random Forest', 'mRMR'), ax=axes[0][1])
+          set_labels=('GEDFN', 'RF', 'mRMR'), set_colors=('r', 'g', 'y'), ax=axes[0][1])
 
     venn3([set(gedfn_results[:100]), set(rfe_results), set(mRMR_results)],
-          set_labels=('GEDFN', 'RFE', 'mRMR'), ax=axes[1][0])
+          set_labels=('GEDFN', 'RFE', 'mRMR'), set_colors=('r', 'c', 'y'), ax=axes[1][0])
 
     venn3([set(rf_results[:100]), set(rfe_results), set(mRMR_results)],
-          set_labels=('Random Forest', 'RFE', 'mRMR'), ax=axes[1][1])
+          set_labels=('RF', 'RFE', 'mRMR'), set_colors=('g', 'c', 'y'), ax=axes[1][1])
 
-    plt.savefig('output/venn.png', bbox_inches='tight')
+    fig.tight_layout()
+    plt.savefig('output/venn.png')
     plt.show()
 
 
 if __name__ == "__main__":
-    X, y, left, right = io_util.load()
+    X, y, left, right = utils.load()
     plot_venn(X, y, left, right)

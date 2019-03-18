@@ -2,15 +2,17 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import cross_val_score, train_test_split, StratifiedKFold
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 
-import io_util
+import utils
 
 
 def rf_feature_selection(X, y):
     rf = RandomForestClassifier(random_state=0, n_estimators=200)
 
-    cv = StratifiedKFold(n_splits=10, random_state=0)
+    cv = StratifiedKFold(n_splits=5, random_state=0)
+    svm = SVC()
 
     accuracy_list = []
     precision_list = []
@@ -63,11 +65,11 @@ def rf_feature_selection(X, y):
 
     for i in np.arange(10, 200, 5):
         sub_results = results[:i]
-        accuracy = cross_val_score(rf, X.loc[:, sub_results], y, cv=cv, scoring='accuracy')
-        auc = cross_val_score(rf, X.loc[:, sub_results], y, cv=cv, scoring='roc_auc')
-        precision = cross_val_score(rf, X.loc[:, sub_results], y, cv=cv, scoring='precision')
-        recall = cross_val_score(rf, X.loc[:, sub_results], y, cv=cv, scoring='recall')
-        f1_macro = cross_val_score(rf, X.loc[:, sub_results], y, cv=cv, scoring='f1_macro')
+        accuracy = cross_val_score(svm, X.loc[:, sub_results], y, cv=cv, scoring='accuracy')
+        auc = cross_val_score(svm, X.loc[:, sub_results], y, cv=cv, scoring='roc_auc')
+        precision = cross_val_score(svm, X.loc[:, sub_results], y, cv=cv, scoring='precision')
+        recall = cross_val_score(svm, X.loc[:, sub_results], y, cv=cv, scoring='recall')
+        f1_macro = cross_val_score(svm, X.loc[:, sub_results], y, cv=cv, scoring='f1_macro')
 
         df.loc[len(df)] = accuracy.mean(), auc.mean(), f1_macro.mean(), precision.mean(), recall.mean(), \
                           accuracy.std(), auc.std(), f1_macro.std(), precision.std(), recall.std()
@@ -76,5 +78,5 @@ def rf_feature_selection(X, y):
 
 
 if __name__ == "__main__":
-    X, y, _left, _right = io_util.load()
+    X, y, _left, _right = utils.load()
     rf_feature_selection(X, y)
