@@ -6,7 +6,8 @@ import matplotlib.pyplot as plt
 import utils
 from scipy import interp
 
-from GEDFN import gedfn
+import GEDFN
+import keras_gedfn
 from DFN import dfn
 
 
@@ -29,15 +30,16 @@ def plot_beauty():
     dfn_y_score = []
     rf_y_score = []
 
-    cv = StratifiedKFold(n_splits=5, random_state=0)
+    # cv = StratifiedKFold(n_splits=10, random_state=0)
     # for train_idx,test_idx in cv.split(X,y):
     #     X_train, X_test, y_train, y_test = X.ix[train_idx], X.ix[test_idx], y[train_idx], y[test_idx]
-    for i in np.arange(0, 10):
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, stratify=y)
+    for i in np.arange(0, 5):
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.05, stratify=y)
         y_true.append(y_test)
         ################GEDFN################################
-        _, _, _, _, _, y_score = gedfn(X_train, X_test,
-                                       to_categorical(y_train), to_categorical(y_test), left, right)
+        # _, _, _, _, _, y_score = gedfn(X_train, X_test,
+        #                                to_categorical(y_train), to_categorical(y_test), left, right)
+        y_score = keras_gedfn.gedfn(X_train, X_test,y_train, y_test, left, right)
         fpr, tpr, _ = roc_curve(y_test, y_score)
         gedfn_tprs.append(interp(mean_fpr, fpr, tpr))
         gedfn_tprs[-1][0] = 0.0
@@ -137,10 +139,11 @@ def plot():
     fig, axes = plt.subplots(1, 2, figsize=(10, 5))
     X, y, left, right = utils.load()
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, stratify=y, random_state=0)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=0)
 
-    _, _, _, _, _, y_score = gedfn(X_train, X_test,
-                                   to_categorical(y_train), to_categorical(y_test), left, right)
+    # _, _, _, _, _, y_score = gedfn(X_train, X_test,
+    #                                to_categorical(y_train), to_categorical(y_test), left, right)
+    y_score = keras_gedfn.gedfn(X_train, X_test, y_train, y_test, left, right)
     precision, recall, _ = precision_recall_curve(y_test, y_score)
     ap = round(average_precision_score(y_test, y_score), 3)
     axes[0].plot(recall, precision, label='GEDFN:AP=' + str(ap), color='r')

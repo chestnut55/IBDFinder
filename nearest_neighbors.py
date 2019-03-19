@@ -43,4 +43,4 @@ def top_k_neighbors(k):
 
 
 if __name__ == "__main__":
-    top_k_neighbors(10)
+    top_k_neighbors(1)

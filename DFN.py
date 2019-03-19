@@ -27,18 +27,18 @@ def dfn(x_train, x_test, y_train, y_test):
         out_layer = tf.matmul(layer_3, weights['out']) + biases['out']
         return out_layer
 
-    tf.reset_default_graph()
+    # tf.reset_default_graph()
 
     ## hyper-parameters and settings
     L2 = False
     learning_rate = 0.001
-    training_epochs = 100
+    training_epochs = 50
     batch_size = 32
     display_step = 1
 
     n_features = np.shape(x_train)[1]
     n_hidden_1 = n_features
-    n_hidden_2 = 32
+    n_hidden_2 = 64
     n_hidden_3 = 16
     n_classes = 2
 
@@ -74,7 +74,7 @@ def dfn(x_train, x_test, y_train, y_test):
     if L2:
         reg = tf.nn.l2_loss(weights['h1']) + tf.nn.l2_loss(weights['h2']) + \
               tf.nn.l2_loss(weights['h3']) + tf.nn.l2_loss(weights['out'])
-        cost = tf.reduce_mean(cost + 0.01 * reg)
+        cost = tf.reduce_mean(cost + 0.001 * reg)
     optimizer = tf.train.AdamOptimizer(learning_rate=lr).minimize(cost)
 
     ## Evaluation
@@ -139,7 +139,8 @@ if __name__ == "__main__":
 
     X, y, left, right = utils.load()
 
-    skf = StratifiedKFold(n_splits=5, random_state=0)
+    skf = StratifiedKFold(n_splits=10, random_state=0)
     for train_idx, test_idx in skf.split(X, y):
         x_train, x_test, y_train, y_test = X.ix[train_idx, :], X.ix[test_idx, :], y[train_idx], y[test_idx]
         dfn(x_train, x_test, to_categorical(y_train), to_categorical(y_test))
+        break

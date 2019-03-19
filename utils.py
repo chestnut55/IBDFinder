@@ -91,4 +91,4 @@ if __name__ == "__main__":
     # B = pd.read_csv('MIC/mic_otu_adj.txt', sep='\t', index_col=0).values
     # U = union_Adjac_matrix(A, B)
     # print(U)
-    read_phylo_tree()
+    load()

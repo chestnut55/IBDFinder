@@ -145,7 +145,7 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
                 print("Epoch:", '%d' % (epoch + 1), "cost =", "{:.9f}".format(avg_cost),
                       "Training accuracy:", round(acc, 3), " Training auc:", round(auc, 3))
 
-            if avg_cost < 0.1:
+            if avg_cost < 0.4:
                 print("Early stopping.")
                 break
 
