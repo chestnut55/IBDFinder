@@ -18,7 +18,7 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
         # layer_1 = tf.add(tf.subtract(tf.matmul(x, weights['h1']), tf.linalg.tensor_diag_part(weights['h1'])),
         #                  biases['b1'])
         layer_1 = tf.nn.relu(layer_1)
-        # layer_1 = tf.nn.dropout(layer_1, keep_prob=keep_prob)
+        layer_1 = tf.nn.dropout(layer_1, keep_prob=0.9)
 
         # layer_2 = tf.add(tf.matmul(layer_1, tf.multiply(weights['h2'], right_adj)), biases['b2'])
         layer_2 = tf.add(tf.matmul(layer_1, weights['h2']), biases['b2'])
@@ -29,14 +29,14 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
         layer_3 = tf.nn.relu(layer_3)
         layer_3 = tf.nn.dropout(layer_3, keep_prob=keep_prob)
 
-        # layer_4 = tf.add(tf.matmul(layer_3, weights['h4']), biases['b4'])
-        # layer_4 = tf.nn.relu(layer_4)
-        # layer_4 = tf.nn.dropout(layer_4, keep_prob=keep_prob)
+        layer_4 = tf.add(tf.matmul(layer_3, weights['h4']), biases['b4'])
+        layer_4 = tf.nn.relu(layer_4)
+        layer_4 = tf.nn.dropout(layer_4, keep_prob=keep_prob)
 
-        out_layer = tf.matmul(layer_3, weights['out']) + biases['out']
+        out_layer = tf.matmul(layer_4, weights['out']) + biases['out']
         return out_layer, weights['h1']
 
-    tf.reset_default_graph()
+    # tf.reset_default_graph()
 
     ## hyper-parameters and settings
     L2 = False
@@ -55,8 +55,8 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
 
     n_features = np.shape(x_train)[1]
     n_hidden_1 = n_features
-    n_hidden_2 = n_features
-    n_hidden_3 = 32
+    n_hidden_2 = 128
+    n_hidden_3 = 64
     n_hidden_4 = 16
     n_classes = 2
 
@@ -73,8 +73,8 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
         'h1': tf.Variable(tf.truncated_normal(shape=[n_features, n_hidden_1], stddev=0.1)),
         'h2': tf.Variable(tf.truncated_normal(shape=[n_hidden_1, n_hidden_2], stddev=0.1)),
         'h3': tf.Variable(tf.truncated_normal(shape=[n_hidden_2, n_hidden_3], stddev=0.1)),
-        # 'h4': tf.Variable(tf.truncated_normal(shape=[n_hidden_3, n_hidden_4], stddev=0.1)),
-        'out': tf.Variable(tf.truncated_normal(shape=[n_hidden_3, n_classes], stddev=0.1))
+        'h4': tf.Variable(tf.truncated_normal(shape=[n_hidden_3, n_hidden_4], stddev=0.1)),
+        'out': tf.Variable(tf.truncated_normal(shape=[n_hidden_4, n_classes], stddev=0.1))
 
     }
 
@@ -82,7 +82,7 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
         'b1': tf.Variable(tf.zeros([n_hidden_1])),
         'b2': tf.Variable(tf.zeros([n_hidden_2])),
         'b3': tf.Variable(tf.zeros([n_hidden_3])),
-        # 'b4': tf.Variable(tf.zeros([n_hidden_4])),
+        'b4': tf.Variable(tf.zeros([n_hidden_4])),
         'out': tf.Variable(tf.zeros([n_classes]))
     }
 
@@ -118,8 +118,8 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
         ## Training cycle
         for epoch in range(training_epochs):
             avg_cost = 0.
-            # x_tmp, y_tmp = shuffle(x_train, y_train)
-            x_tmp, y_tmp = x_train, y_train
+            x_tmp, y_tmp = shuffle(x_train, y_train)
+            # x_tmp, y_tmp = x_train, y_train
             # Loop over all batches
             for i in range(total_batch - 1):
                 batch_x, batch_y = x_tmp[i * batch_size:i * batch_size + batch_size], \
@@ -145,7 +145,7 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
                 print("Epoch:", '%d' % (epoch + 1), "cost =", "{:.9f}".format(avg_cost),
                       "Training accuracy:", round(acc, 3), " Training auc:", round(auc, 3))
 
-            if avg_cost < 0.4:
+            if avg_cost < 0.1:
                 print("Early stopping.")
                 break
 

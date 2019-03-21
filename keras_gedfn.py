@@ -3,6 +3,7 @@ from keras.models import Sequential
 from keras.layers import Input, Dense, Dropout, Concatenate
 from sklearn.model_selection import StratifiedKFold, train_test_split
 from keras.utils import to_categorical
+from keras.layers import BatchNormalization
 import utils
 from keras.callbacks import EarlyStopping
 import matplotlib.pyplot as plt
@@ -48,10 +49,12 @@ def gedfn(x_train, x_test, y_train, y_test, left, right):
                   metrics=['accuracy'])
     # es = EarlyStopping(monitor='val_loss', mode='min', verbose=1,patience=10)
 
-    history = model.fit(x_train, y_train, epochs=100, verbose=1, batch_size=16)
+    history = model.fit(x_train, y_train, epochs=220, verbose=0, batch_size=32)
     print(history.history['loss'])
+    test_loss, test_acc = model.evaluate(x_test, y_test)
+    y_predict = model.predict(x_test)
 
-    return model.predict(x_test)
+    return y_predict, test_loss,test_acc
 
 
 if __name__ == "__main__":

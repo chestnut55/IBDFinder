@@ -35,7 +35,7 @@ def biom2ml():
     filter_ibd = lambda v, i_, m: [x for x in ibd if x == i_]
     ibd_group = ibd_abundance_table.filter(filter_ibd, axis='sample', inplace=False)
     df_ibd = ibd_group.to_dataframe(dense=True)
-    df_ibd = df_ibd.sample(frac=0.5, random_state=1234, axis=1)
+    # df_ibd = df_ibd.sample(frac=0.5, random_state=1234, axis=1)
     # df_ibd = ibd_group.to_dataframe(dense=True)
     # control group
     filter_control = lambda v, i_, m: [x for x in control if x == i_]

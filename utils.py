@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.utils import shuffle
 from sklearn import preprocessing
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
 from sklearn.metrics import precision_score, recall_score, f1_score, roc_auc_score, accuracy_score
 from io import StringIO
 from Bio import Phylo
@@ -13,8 +14,15 @@ def load():
     load the training data and adj matrix
     :return:
     '''
-    left = pd.read_csv('sparcc/sparcc_otu_adj.txt', sep='\t', index_col=0).values
-    right = pd.read_csv('MIC/mic_otu_adj.txt', sep='\t', index_col=0).values
+    sparcc = pd.read_csv('sparcc/sparcc_otu_adj.txt', sep='\t', index_col=0).values
+    mic = pd.read_csv('MIC/mic_otu_adj.txt', sep='\t', index_col=0).values
+    spieceasi = pd.read_csv('Spieceasi/spieceasi_adj_out.txt', sep='\t', index_col=0).values
+
+    identity_mat = np.identity(n=spieceasi.shape[0], dtype=np.int)
+    spieceasi = spieceasi + identity_mat
+
+    merged = sparcc + mic + spieceasi
+    merged[merged > 1] = 1
 
     # U = union_Adjac_matrix(left, right)
     X = pd.read_csv('output/ibd_otus.txt', sep='\t', index_col=0, header=0)
@@ -22,8 +30,12 @@ def load():
     y = X['label'].values
     X = X.drop(columns=['label'])
     # X = preprocessing.normalize(X, axis=1)
+    # print(check_symmetric(spieceasi))
+    flat_list = [item for sublist in merged.tolist() for item in sublist]
 
-    return X, y, left,left
+    print(flat_list.count(1))
+
+    return X, y, sparcc, merged
 
 
 def parse_CoNet():
@@ -68,6 +80,25 @@ def rf(x_train, x_test, y_train, y_test):
           f1, " Testing precision: ", precision, " Testing recall: ", recall)
     return acc, auc, f1, precision, recall, y_score
 
+
+# SVM
+def svm(x_train, x_test, y_train, y_test):
+    svm = SVC(probability=True)
+    svm.fit(x_train, y_train)
+    y_pred = svm.predict(x_test)
+    y_score = svm.predict_proba(x_test)[:, 1]
+
+    acc = round(accuracy_score(y_test, y_pred), 3)
+    f1 = round(f1_score(y_test, y_pred), 3)
+    precision = round(precision_score(y_test, y_pred), 3)
+    recall = round(recall_score(y_test, y_pred), 3)
+
+    auc = round(roc_auc_score(y_test, y_score), 3)
+
+
+    print("SVM Testing accuracy: ", acc, " Testing auc: ", auc, " Testing f1: ",
+          f1, " Testing precision: ", precision, " Testing recall: ", recall)
+    return acc, auc, f1, precision, recall, y_score
 
 def check_symmetric(a, tol=1e-8):
     return np.allclose(a, a.T, atol=tol)

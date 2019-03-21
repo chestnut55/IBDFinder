@@ -25,21 +25,21 @@ for index, (value1, value2) in enumerate(zip(nodesA, nodesB)):
     df_[value2][value1] = 1
 
     # add neighbors of phylogenetic tree
-    if value1 in joined_nodes:
-        check_neighbors = nearest_neighbors_matrix.loc[nearest_neighbors_matrix[value1] == 1]
-        if check_neighbors is not None:
-            individual_neighbors = set(check_neighbors.index.values).intersection(joined_nodes)
-            for ind in individual_neighbors:
-                df_[value2][ind] = 1
-                df_[ind][value2] = 1
-    if value2 in joined_nodes:
-        check_neighbors2 = nearest_neighbors_matrix.loc[nearest_neighbors_matrix[value2] == 1]
-        if check_neighbors2 is not None:
-            individual_neighbors = set(check_neighbors2.index.values).intersection(joined_nodes)
-            for ind in individual_neighbors:
-                df_[value1][ind] = 1
-                df_[ind][value1] = 1
-# df_ = df_ - np.diag(np.diag(df_))
+    # if value1 in joined_nodes:
+    #     check_neighbors = nearest_neighbors_matrix.loc[nearest_neighbors_matrix[value1] == 1]
+    #     if check_neighbors is not None:
+    #         individual_neighbors = set(check_neighbors.index.values).intersection(joined_nodes)
+    #         for ind in individual_neighbors:
+    #             df_[value2][ind] = 1
+    #             df_[ind][value2] = 1
+    # if value2 in joined_nodes:
+    #     check_neighbors2 = nearest_neighbors_matrix.loc[nearest_neighbors_matrix[value2] == 1]
+    #     if check_neighbors2 is not None:
+    #         individual_neighbors = set(check_neighbors2.index.values).intersection(joined_nodes)
+    #         for ind in individual_neighbors:
+    #             df_[value1][ind] = 1
+    #             df_[ind][value1] = 1
+df_ = df_ - np.diag(np.diag(df_))
 df_.to_csv('mic_otu_adj.txt', sep='\t')
 
 flat_list = [item for sublist in df_.values.tolist() for item in sublist]

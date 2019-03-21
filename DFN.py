@@ -37,7 +37,7 @@ def dfn(x_train, x_test, y_train, y_test):
     display_step = 1
 
     n_features = np.shape(x_train)[1]
-    n_hidden_1 = n_features
+    n_hidden_1 = 128
     n_hidden_2 = 64
     n_hidden_3 = 16
     n_classes = 2
@@ -89,8 +89,8 @@ def dfn(x_train, x_test, y_train, y_test):
         ## Training cycle
         for epoch in range(training_epochs):
             avg_cost = 0.
-            # x_tmp, y_tmp = shuffle(x_train, y_train)
-            x_tmp, y_tmp = x_train, y_train
+            x_tmp, y_tmp = shuffle(x_train, y_train)
+            # x_tmp, y_tmp = x_train, y_train
             # Loop over all batches
             for i in range(total_batch - 1):
                 batch_x, batch_y = x_tmp[i * batch_size:i * batch_size + batch_size], \
