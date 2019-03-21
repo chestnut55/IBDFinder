@@ -26,7 +26,7 @@ def plot_venn(X, y, left, right):
     mRMR_df = X.copy()
     mRMR_df.insert(loc=0, column='class', value=y)
     # mRMR_df.to_csv('output/mRMR_df.csv',index=False)
-    mRMR_results = pymrmr.mRMR(mRMR_df, 'MID', 100)
+    mRMR_results = pymrmr.mRMR(mRMR_df, 'MID', 5)
 
     # random forest
     rf = RandomForestClassifier(random_state=0, n_estimators=200)
@@ -61,4 +61,4 @@ def plot_venn(X, y, left, right):
 
 if __name__ == "__main__":
     X, y, left, right = utils.load()
-    plot_venn(X, y, left, right)
+    plot_venn(X, y, right, right)

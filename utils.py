@@ -31,9 +31,14 @@ def load():
     X = X.drop(columns=['label'])
     # X = preprocessing.normalize(X, axis=1)
     # print(check_symmetric(spieceasi))
-    flat_list = [item for sublist in merged.tolist() for item in sublist]
+    merged_flat_list = [item for sublist in merged.tolist() for item in sublist]
 
-    print(flat_list.count(1))
+    sparcc_flat_list = [item for sublist in sparcc.tolist() for item in sublist]
+
+    spieceasi_flat_list = [item for sublist in spieceasi.tolist() for item in sublist]
+
+    print("merged=" + str(merged_flat_list.count(1)), "sparcc=" + str(sparcc_flat_list.count(1)),
+          "spieceasi=" + str(spieceasi_flat_list.count(1)))
 
     return X, y, sparcc, merged
 
@@ -61,6 +66,7 @@ def parse_taxa():
     se = set(df.apply(apply_column_filter, axis=1).values)
     print(len(se))
 
+
 # random forest
 def rf(x_train, x_test, y_train, y_test):
     rf = RandomForestClassifier(random_state=0, n_estimators=200)
@@ -75,10 +81,19 @@ def rf(x_train, x_test, y_train, y_test):
 
     auc = round(roc_auc_score(y_test, y_score), 3)
 
-
     print("Random Forest Testing accuracy: ", acc, " Testing auc: ", auc, " Testing f1: ",
           f1, " Testing precision: ", precision, " Testing recall: ", recall)
     return acc, auc, f1, precision, recall, y_score
+
+
+def rf_ranked_feature_selection(X_train, y_train):
+    rf = RandomForestClassifier(random_state=0, n_estimators=200)
+    rf.fit(X_train, y_train)
+    importances = rf.feature_importances_
+    results = pd.Series(importances,
+                        index=X_train.columns.values).sort_values(ascending=False).index.values
+
+    return results
 
 
 # SVM
@@ -95,13 +110,14 @@ def svm(x_train, x_test, y_train, y_test):
 
     auc = round(roc_auc_score(y_test, y_score), 3)
 
-
     print("SVM Testing accuracy: ", acc, " Testing auc: ", auc, " Testing f1: ",
           f1, " Testing precision: ", precision, " Testing recall: ", recall)
     return acc, auc, f1, precision, recall, y_score
 
+
 def check_symmetric(a, tol=1e-8):
     return np.allclose(a, a.T, atol=tol)
+
 
 def union_Adjac_matrix(A, B):
     '''
@@ -116,6 +132,7 @@ def union_Adjac_matrix(A, B):
 def read_phylo_tree():
     tree = Phylo.read("data/tree.nwk", "newick")
     Phylo.draw(tree)
+
 
 if __name__ == "__main__":
     # A = pd.read_csv('sparcc/sparcc_otu_adj.txt', sep='\t', index_col=0).values

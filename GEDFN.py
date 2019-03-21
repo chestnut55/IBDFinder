@@ -34,7 +34,7 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
         layer_4 = tf.nn.dropout(layer_4, keep_prob=keep_prob)
 
         out_layer = tf.matmul(layer_4, weights['out']) + biases['out']
-        return out_layer, weights['h1']
+        return out_layer, weights['h1'], weights['h2']
 
     # tf.reset_default_graph()
 
@@ -87,7 +87,7 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
     }
 
     # Construct model
-    pred, layer1_weights = multilayer_perceptron(x, weights, biases, keep_prob)
+    pred, layer1_weights,layer2_weights  = multilayer_perceptron(x, weights, biases, keep_prob)
 
     # Define loss and optimizer
     cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=pred, labels=y))
@@ -138,8 +138,8 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
             ## Display logs per epoch step
             if epoch % display_step == 0:
                 loss_rec[epoch] = avg_cost
-                acc, y_s, _ = sess.run([accuracy, y_score, layer1_weights],
-                                       feed_dict={x: x_train, y: y_train, keep_prob: 1})
+                acc, y_s, _, _ = sess.run([accuracy, y_score, layer1_weights, layer2_weights],
+                                          feed_dict={x: x_train, y: y_train, keep_prob: 1})
                 auc = metrics.roc_auc_score(y_train, y_s)
                 training_eval[epoch] = [acc, auc]
                 print("Epoch:", '%d' % (epoch + 1), "cost =", "{:.9f}".format(avg_cost),
@@ -150,8 +150,8 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
                 break
 
         ## Testing cycle
-        acc, y_s, l1_weights, cost = sess.run([accuracy, y_score, layer1_weights, cost],
-                                        feed_dict={x: x_test, y: y_test, keep_prob: 1})
+        acc, y_s, l1_weights, l2_weights, cost = sess.run([accuracy, y_score, layer1_weights, layer2_weights, cost],
+                                                          feed_dict={x: x_test, y: y_test, keep_prob: 1})
 
         auc = round(roc_auc_score(y_test, y_s), 3)
 
@@ -165,7 +165,8 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
         var_imp = np.reshape(var_imp, [n_features])
         print("Graph Embedding Networks Testing accuracy: ", acc, " Testing auc: ", auc, " Testing f1: ",
               f1, " Testing precision: ", precision," Testing recall: ", recall," Testing cost: ", cost)
-        # np.savetxt("output/l1_weights.txt", l1_weights, delimiter=",")
+        np.savetxt("output/l1_weights.txt", l1_weights, delimiter=",")
+        np.savetxt("output/l2_weights.txt", l2_weights, delimiter=",")
         np.savetxt('output/var_ibd.csv', var_imp, delimiter=",")
     return acc, auc, f1, precision, recall, y_s[:, 1]
 
