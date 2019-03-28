@@ -61,7 +61,7 @@ def dfn(x_train, x_test, y_train, y_test):
 
 if __name__ == "__main__":
     X, y, left, right = utils.load()
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, stratify=y, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)
     dfn(X_train, X_test, y_train, y_test)
     # skf = StratifiedKFold(n_splits=10, random_state=0)
     # for train_idx, test_idx in skf.split(X, y):

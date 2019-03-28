@@ -5,3 +5,18 @@ agg<-tax_glom(RISK_CCFA,taxrank = 'Genus')
 tree<-phy_tree(agg)
 tips_distances<-cophenetic(tree)
 write.table(tips_distances,'tips_distances.csv',sep='\t',col.names=tree$tip.label,row.names=tree$tip.label)
+
+
+set.seed(1234)
+dat <- (matrix(rnorm(100), 4, 24))
+dat_dist <- dist(dat)
+hc1 <- hclust(dat_dist)
+dat_dist
+hc2 <- hclust(cophenetic(hc1), method = "complete")
+hc3 <- hclust(cophenetic(hc1), method = "single")
+hc4 <- hclust(cophenetic(hc1), method = "ave")
+par(mfrow = c(1,4))
+#plot(hc1)
+#plot(hc2)
+#plot(hc3)
+plot(hc4)

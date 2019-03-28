@@ -7,6 +7,7 @@ from sklearn import metrics
 from sklearn.metrics import recall_score, f1_score, roc_auc_score, precision_score
 from sklearn.model_selection import StratifiedKFold
 from sklearn.utils import shuffle
+import tensorflow.contrib as contrib
 
 import utils
 
@@ -17,7 +18,7 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
         layer_1 = tf.add(tf.matmul(x, tf.multiply(weights['h1'], left_adj)), biases['b1'])
         # layer_1 = tf.add(tf.subtract(tf.matmul(x, weights['h1']), tf.linalg.tensor_diag_part(weights['h1'])),
         #                  biases['b1'])
-        layer_1 = tf.nn.relu(layer_1)
+        layer_1 = tf.nn.leaky_relu(layer_1)
         layer_1 = tf.nn.dropout(layer_1, keep_prob=0.9)
 
         # layer_2 = tf.add(tf.matmul(layer_1, tf.multiply(weights['h2'], right_adj)), biases['b2'])
@@ -39,7 +40,8 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
     # tf.reset_default_graph()
 
     ## hyper-parameters and settings
-    L2 = False
+    L1 = False
+    L2 = True
     learning_rate = 0.001
     training_epochs = 200
     batch_size = 32
@@ -91,10 +93,13 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
 
     # Define loss and optimizer
     cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=pred, labels=y))
+    if L1:
+        cost = cost + contrib.layers.l1_regularizer(0.5)(weights['h1'])
     if L2:
-        reg = tf.nn.l2_loss(weights['h1']) + tf.nn.l2_loss(weights['h2']) + \
-              tf.nn.l2_loss(weights['h3']) + tf.nn.l2_loss(weights['h4']) + tf.nn.l2_loss(weights['out'])
-        cost = tf.reduce_mean(cost + 0.01 * reg)
+        reg = tf.nn.l2_loss(weights['h1'])
+        # reg = tf.nn.l2_loss(weights['h1']) + tf.nn.l2_loss(weights['h2']) + \
+        #       tf.nn.l2_loss(weights['h3']) + tf.nn.l2_loss(weights['h4']) + tf.nn.l2_loss(weights['out'])
+        cost = tf.reduce_mean(cost + 0.00001 * reg)
     optimizer = tf.train.AdamOptimizer(learning_rate=lr).minimize(cost)
 
     ## Evaluation
@@ -175,8 +180,7 @@ if __name__ == "__main__":
 
     X, y, left, right = utils.load()
 
-    skf = StratifiedKFold(n_splits=10, random_state=0)
+    skf = StratifiedKFold(n_splits=5, random_state=0)
     for train_idx, test_idx in skf.split(X, y):
         x_train, x_test, y_train, y_test = X.ix[train_idx, :], X.ix[test_idx, :], y[train_idx], y[test_idx]
-        gedfn(x_train, x_test, to_categorical(y_train), to_categorical(y_test), left, right)
-        break
+        gedfn(x_train, x_test, to_categorical(y_train), to_categorical(y_test), right, right)
