@@ -40,6 +40,10 @@ def load():
     print("merged=" + str(merged_flat_list.count(1)), "sparcc=" + str(sparcc_flat_list.count(1)),
           "spieceasi=" + str(spieceasi_flat_list.count(1)))
 
+    # print(X.values.max())
+    # print(np.min(X.values[np.nonzero(X.values)]))
+    # X[X < 1e-5] = 0
+
     return X, y, sparcc, merged
 
 
@@ -69,7 +73,7 @@ def parse_taxa():
 
 # random forest
 def rf(x_train, x_test, y_train, y_test):
-    rf = RandomForestClassifier(random_state=0, n_estimators=200)
+    rf = RandomForestClassifier(random_state=0, n_estimators=100)
     rf.fit(x_train, y_train)
     y_pred = rf.predict(x_test)
     y_score = rf.predict_proba(x_test)[:, 1]

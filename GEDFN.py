@@ -41,7 +41,7 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
 
     ## hyper-parameters and settings
     L1 = False
-    L2 = True
+    L2 = False
     learning_rate = 0.001
     training_epochs = 200
     batch_size = 32

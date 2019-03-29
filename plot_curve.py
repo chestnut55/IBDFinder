@@ -46,7 +46,6 @@ def plot_beauty():
 
     colors = sns.color_palette("Set1", n_colors=8, desat=.5)
 
-
     cv = StratifiedKFold(n_splits=5, random_state=0)
     for train_idx, test_idx in cv.split(X, y):
         X_train, X_test, y_train, y_test = X.ix[train_idx], X.ix[test_idx], y[train_idx], y[test_idx]
@@ -161,25 +160,25 @@ def plot_beauty():
     mean_tpr[-1] = 1.0
     mean_auc = auc(mean_fpr, mean_tpr)
     std_auc = np.std(dfn_aucs)
-    axes[0].plot(mean_fpr, mean_tpr, color='green',
-                 label=r'DFN (%0.3f $\pm$ %0.3f)' % (mean_auc, std_auc),
-                 lw=2, alpha=.8)
+    # axes[0].plot(mean_fpr, mean_tpr, color='green',
+    #              label=r'DFN (%0.3f $\pm$ %0.3f)' % (mean_auc, std_auc),
+    #              lw=2, alpha=.8)
 
     precision, recall, _ = precision_recall_curve(y_true, dfn_y_score)
     ap = round(average_precision_score(y_true, dfn_y_score), 3)
-    axes[1].plot(recall, precision, label='DFN: ' + str(ap), color='green')
+    # axes[1].plot(recall, precision, label='DFN: ' + str(ap), color='green')
     ################Random Forest################################
     mean_tpr = np.mean(rf_tprs, axis=0)
     mean_tpr[-1] = 1.0
     mean_auc = auc(mean_fpr, mean_tpr)
     std_auc = np.std(rf_aucs)
-    axes[0].plot(mean_fpr, mean_tpr, color='blue',
+    axes[0].plot(mean_fpr, mean_tpr, color='green',
                  label=r'RF (%0.3f $\pm$ %0.3f)' % (mean_auc, std_auc),
                  lw=2, alpha=.8)
 
     precision, recall, _ = precision_recall_curve(y_true, rf_y_score)
     ap = round(average_precision_score(y_true, rf_y_score), 3)
-    axes[1].plot(recall, precision, label='RF: ' + str(ap), color='blue')
+    axes[1].plot(recall, precision, label='RF: ' + str(ap), color='green')
     ##############################################################
 
     ################SVM################################
@@ -187,13 +186,13 @@ def plot_beauty():
     mean_tpr[-1] = 1.0
     mean_auc = auc(mean_fpr, mean_tpr)
     std_auc = np.std(svm_aucs)
-    axes[0].plot(mean_fpr, mean_tpr, color=colors[4],
+    axes[0].plot(mean_fpr, mean_tpr, color='blue',
                  label=r'SVM (%0.3f $\pm$ %0.3f)' % (mean_auc, std_auc),
                  lw=2, alpha=.8)
 
     precision, recall, _ = precision_recall_curve(y_true, svm_y_score)
     ap = round(average_precision_score(y_true, svm_y_score), 3)
-    axes[1].plot(recall, precision, label='SVM: ' + str(ap), color=colors[4])
+    axes[1].plot(recall, precision, label='SVM: ' + str(ap), color='blue')
 
     print("Test Accuracy is ", np.mean(gedfn_accuracy_list), np.mean(gemlp_accuracy_list), np.mean(dfn_accuracy_list),
           np.mean(rf_accuracy_list), np.mean(svm_accuracy_list))
