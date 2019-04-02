@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import utils
 from scipy import interp
 import seaborn as sns
+import pandas as pd
 
 import GEDFN
 import keras_gedfn
@@ -44,7 +45,10 @@ def plot_beauty():
     rf_y_score = []
     svm_y_score = []
 
-    colors = sns.color_palette("Set1", n_colors=8, desat=.5)
+    df_acc = pd.DataFrame(columns=['Name', 'Accuracy'])
+
+    sns.set(style="whitegrid")
+    colors = sns.color_palette()
 
     cv = StratifiedKFold(n_splits=5, random_state=0)
     for train_idx, test_idx in cv.split(X, y):
@@ -67,6 +71,8 @@ def plot_beauty():
 
         gedfn_accuracy_list.append(acc)
 
+        df_acc.loc[len(df_acc)] = 'GEDFN', acc
+
         ################GEDFN sparse layer and dense layer in different layers########################
         y_score, loss, acc = keras_gemlp.gemlp(X_train, X_test, y_train, y_test, right, right)
         # acc, _, _, _, _, y_score = GEDFN.gedfn(X_train, X_test, to_categorical(y_train), to_categorical(y_test),left, right)
@@ -80,6 +86,7 @@ def plot_beauty():
         precision, recall, _ = precision_recall_curve(y_test, y_score)
 
         gemlp_accuracy_list.append(acc)
+        df_acc.loc[len(df_acc)] = 'GEMLP', acc
         ################DFN################################
         acc, _, _, _, _, y_score = DFN.dfn(X_train, X_test,
                                            to_categorical(y_train), to_categorical(y_test))
@@ -93,7 +100,6 @@ def plot_beauty():
         precision, recall, _ = precision_recall_curve(y_test, y_score)
 
         dfn_accuracy_list.append(acc)
-
         ################Random Forest################################
         acc, _, _, _, _, y_score = utils.rf(X_train, X_test, y_train, y_test)
         # _, _, _, _, _, y_score = GEDFN.gedfn(X_train, X_test, to_categorical(y_train), to_categorical(y_test),left, right)
@@ -107,7 +113,7 @@ def plot_beauty():
         precision, recall, _ = precision_recall_curve(y_test, y_score)
 
         rf_accuracy_list.append(acc)
-
+        df_acc.loc[len(df_acc)] = 'RF', acc
         ################SVM################################
         acc, _, _, _, _, y_score = utils.svm(X_train, X_test, y_train, y_test)
         fpr, tpr, _ = roc_curve(y_test, y_score)
@@ -120,7 +126,9 @@ def plot_beauty():
         precision, recall, _ = precision_recall_curve(y_test, y_score)
 
         svm_accuracy_list.append(acc)
+        df_acc.loc[len(df_acc)] = 'SVM', acc
 
+    print('svm acc is ', svm_accuracy_list)
     y_true = np.concatenate(y_true, axis=0)
 
     gedfn_y_score = np.concatenate(gedfn_y_score, axis=0)
@@ -135,26 +143,26 @@ def plot_beauty():
     mean_tpr[-1] = 1.0
     mean_auc = auc(mean_fpr, mean_tpr)
     std_auc = np.std(gedfn_aucs)
-    axes[0].plot(mean_fpr, mean_tpr, color='r',
+    axes[0].plot(mean_fpr, mean_tpr, color=colors[3],
                  label=r'GEDFN (%0.3f $\pm$ %0.3f)' % (mean_auc, std_auc),
                  lw=2, alpha=.8)
 
     precision, recall, _ = precision_recall_curve(y_true, gedfn_y_score)
     ap = round(average_precision_score(y_true, gedfn_y_score), 3)
-    axes[1].plot(recall, precision, label='GEDFN: ' + str(ap), color='r')
+    # axes[1].plot(recall, precision, label='GEDFN: ' + str(ap), color='r')
 
     ################GEMLP################################
     mean_tpr = np.mean(gemlp_tprs, axis=0)
     mean_tpr[-1] = 1.0
     mean_auc = auc(mean_fpr, mean_tpr)
     std_auc = np.std(gemlp_aucs)
-    axes[0].plot(mean_fpr, mean_tpr, color='purple',
+    axes[0].plot(mean_fpr, mean_tpr, color=colors[2],
                  label=r'GEMLP (%0.3f $\pm$ %0.3f)' % (mean_auc, std_auc),
                  lw=2, alpha=.8)
 
     precision, recall, _ = precision_recall_curve(y_true, gemlp_y_score)
     ap = round(average_precision_score(y_true, gemlp_y_score), 3)
-    axes[1].plot(recall, precision, label='GEMLP: ' + str(ap), color='purple')
+    # axes[1].plot(recall, precision, label='GEMLP: ' + str(ap), color='purple')
     ################DFN################################
     mean_tpr = np.mean(dfn_tprs, axis=0)
     mean_tpr[-1] = 1.0
@@ -172,13 +180,13 @@ def plot_beauty():
     mean_tpr[-1] = 1.0
     mean_auc = auc(mean_fpr, mean_tpr)
     std_auc = np.std(rf_aucs)
-    axes[0].plot(mean_fpr, mean_tpr, color='green',
+    axes[0].plot(mean_fpr, mean_tpr, color=colors[0],
                  label=r'RF (%0.3f $\pm$ %0.3f)' % (mean_auc, std_auc),
                  lw=2, alpha=.8)
 
     precision, recall, _ = precision_recall_curve(y_true, rf_y_score)
     ap = round(average_precision_score(y_true, rf_y_score), 3)
-    axes[1].plot(recall, precision, label='RF: ' + str(ap), color='green')
+    # axes[1].plot(recall, precision, label='RF: ' + str(ap), color='green')
     ##############################################################
 
     ################SVM################################
@@ -186,16 +194,16 @@ def plot_beauty():
     mean_tpr[-1] = 1.0
     mean_auc = auc(mean_fpr, mean_tpr)
     std_auc = np.std(svm_aucs)
-    axes[0].plot(mean_fpr, mean_tpr, color='blue',
+    axes[0].plot(mean_fpr, mean_tpr, color=colors[1],
                  label=r'SVM (%0.3f $\pm$ %0.3f)' % (mean_auc, std_auc),
                  lw=2, alpha=.8)
 
     precision, recall, _ = precision_recall_curve(y_true, svm_y_score)
     ap = round(average_precision_score(y_true, svm_y_score), 3)
-    axes[1].plot(recall, precision, label='SVM: ' + str(ap), color='blue')
+    # axes[1].plot(recall, precision, label='SVM: ' + str(ap), color='blue')
 
-    print("Test Accuracy is ", np.mean(gedfn_accuracy_list), np.mean(gemlp_accuracy_list), np.mean(dfn_accuracy_list),
-          np.mean(rf_accuracy_list), np.mean(svm_accuracy_list))
+    sns.boxplot(x="Name", y="Accuracy", data=df_acc, ax=axes[1],
+                palette=[colors[3], colors[2], colors[0], colors[1]])
 
     axes[0].set_xlim([-0.05, 1.05])
     axes[0].set_ylim([-0.05, 1.05])
@@ -203,13 +211,6 @@ def plot_beauty():
     axes[0].set_ylabel('True Positive Rate')
     axes[0].set_title('AUC curve')
     axes[0].legend(loc='best')
-
-    axes[1].set_xlim([-0.05, 1.05])
-    axes[1].set_ylim([-0.05, 1.05])
-    axes[1].set_xlabel('Recall')
-    axes[1].set_ylabel('Precision')
-    axes[1].set_title('Precision-Recall curve')
-    axes[1].legend(loc='best')
 
     fig.tight_layout()
     fig.savefig('output/roc_curve.png')

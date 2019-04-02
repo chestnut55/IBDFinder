@@ -7,6 +7,7 @@ class LossCallBack(EarlyStopping):
 
     def on_epoch_end(self, epoch, logs=None):
         current = logs.get('loss')
+        # acc = logs.get('val_acc')
         if current is None:
             return
 

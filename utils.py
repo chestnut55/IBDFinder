@@ -102,7 +102,7 @@ def rf_ranked_feature_selection(X_train, y_train):
 
 # SVM
 def svm(x_train, x_test, y_train, y_test):
-    svm = SVC(probability=True)
+    svm = SVC(C=0.1, probability=True, tol=0.01)
     svm.fit(x_train, y_train)
     y_pred = svm.predict(x_test)
     y_score = svm.predict_proba(x_test)[:, 1]
