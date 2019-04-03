@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
+from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_score, StratifiedKFold, train_test_split
 from nearest_neighbors import taxon_id_name
 import utils
@@ -20,8 +21,9 @@ def analysis_metrics():
     y = df['label'].values
     X = df.drop(columns=['label'])
 
-    rf = RandomForestClassifier(random_state=0, n_estimators=200)
+    rf = RandomForestClassifier(random_state=0, n_estimators=100)
     # svm = SVC(kernel='linear',probability=True)
+    # lr = LogisticRegression(random_state=0)
 
     cv = StratifiedKFold(n_splits=5, random_state=0)
 
@@ -85,11 +87,11 @@ def plot_cophenetic_distance():
 
     narr.append(ged)
     narr.append(rf)
-    df = pd.DataFrame(np.asarray(narr).T, columns=['GEDFN', 'Random Forest'], index=np.arange(10, 110, 10))
+    df = pd.DataFrame(np.asarray(narr).T, columns=['GEMLP', 'Random Forest'], index=np.arange(10, 110, 10))
 
     # sns.palplot(sns.color_palette("muted", 10))
     colors = sns.color_palette("hls", 8)
-    ax = df[['GEDFN', 'Random Forest']].plot(title="Cophenetic distance", figsize=(9, 7), legend=True,
+    ax = df[['GEMLP', 'Random Forest']].plot(title="Cophenetic distance", figsize=(9, 7), legend=True,
                                             fontsize=12, color=[colors[0],colors[2]])
     ax.set_xlabel("#Features", fontsize=12)
     ax.set_ylabel("Distance", fontsize=12)

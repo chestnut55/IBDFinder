@@ -1,4 +1,6 @@
 import pymrmr
+import venn
+import matplotlib
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -9,16 +11,19 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_selection import RFE
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
+from keras_gemlp import gemlp
 from GEDFN import gedfn
 import utils
+import seaborn as sns
 
 
-def plot_venn(X, y, left, right):
+def generate_venn(X, y, left, right):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=0)
 
+    top_selected_features = 50
     # RFE
     model = LogisticRegression()
-    rfe = RFE(model, 100, step=5)
+    rfe = RFE(model, top_selected_features, step=5)
     fit = rfe.fit(X_train, y_train)
     rfe_results = X.columns.values[fit.support_]
 
@@ -26,10 +31,10 @@ def plot_venn(X, y, left, right):
     mRMR_df = X.copy()
     mRMR_df.insert(loc=0, column='class', value=y)
     # mRMR_df.to_csv('output/mRMR_df.csv',index=False)
-    mRMR_results = pymrmr.mRMR(mRMR_df, 'MID', 5)
+    mRMR_results = pymrmr.mRMR(mRMR_df, 'MID', top_selected_features)
 
     # random forest
-    rf = RandomForestClassifier(random_state=0, n_estimators=200)
+    rf = RandomForestClassifier(random_state=0, n_estimators=100)
     rf.fit(X_train, y_train)
     importances = rf.feature_importances_
     rf_results = pd.Series(importances, index=X.columns.values).sort_values(ascending=False).index.values
@@ -40,25 +45,46 @@ def plot_venn(X, y, left, right):
     nodes = X.columns.values.tolist()
     gedfn_results = pd.Series(var_ibd, index=nodes).sort_values(ascending=False).index.values
 
+    df_top_features = pd.DataFrame(columns=['rfe', 'mRMR', 'rf', 'gedfn'])
+    df_top_features['rfe'] = rfe_results
+    df_top_features['mRMR'] = mRMR_results
+    df_top_features['rf'] = rf_results[:top_selected_features]
+    df_top_features['gedfn'] = gedfn_results[:top_selected_features]
+
+    df_top_features.to_csv('output/venn.txt')
+
+
+def plot_venn3():
     fig, axes = plt.subplots(2, 2, figsize=(10, 10))
 
-    venn3([set(gedfn_results[:100]), set(rf_results[:100]), set(rfe_results)],
+    df = pd.read_csv('output/venn.txt', sep=',')
+    venn3([set(df['gedfn'].values), set(df['rf'].values), set(df['rfe'].values)],
           set_labels=('GEDFN', 'RF', 'RFE'), set_colors=('r', 'g', 'c'), ax=axes[0][0])
 
-    venn3([set(gedfn_results[:100]), set(rf_results[:100]), set(mRMR_results)],
+    venn3([set(df['gedfn'].values), set(df['rf'].values), set(df['mRMR'].values)],
           set_labels=('GEDFN', 'RF', 'mRMR'), set_colors=('r', 'g', 'y'), ax=axes[0][1])
 
-    venn3([set(gedfn_results[:100]), set(rfe_results), set(mRMR_results)],
+    venn3([set(df['gedfn'].values), set(df['rfe'].values), set(df['mRMR'].values)],
           set_labels=('GEDFN', 'RFE', 'mRMR'), set_colors=('r', 'c', 'y'), ax=axes[1][0])
 
-    venn3([set(rf_results[:100]), set(rfe_results), set(mRMR_results)],
+    venn3([set(df['rf'].values), set(df['rfe'].values), set(df['mRMR'].values)],
           set_labels=('RF', 'RFE', 'mRMR'), set_colors=('g', 'c', 'y'), ax=axes[1][1])
 
     fig.tight_layout()
-    plt.savefig('output/venn.png')
+    plt.savefig('output/venn3.png')
+    plt.show()
+
+
+def plot_venn4():
+    df = pd.read_csv('output/venn.txt', sep=',')
+    labels = venn.get_labels([df['rfe'].values, df['mRMR'].values, df['rf'].values, df['gedfn'].values])
+    venn.venn4(labels, names=['RFE', 'mRMR', 'RF', 'GEMLP'], figsize=(8, 8))
+    plt.savefig('output/venn4.png')
     plt.show()
 
 
 if __name__ == "__main__":
     X, y, left, right = utils.load()
-    plot_venn(X, y, right, right)
+    # generate_venn(X, y, right, right)
+    # plot_venn3()
+    plot_venn4()

@@ -91,7 +91,7 @@ def rf(x_train, x_test, y_train, y_test):
 
 
 def rf_ranked_feature_selection(X_train, y_train):
-    rf = RandomForestClassifier(random_state=0, n_estimators=200)
+    rf = RandomForestClassifier(random_state=0, n_estimators=100)
     rf.fit(X_train, y_train)
     importances = rf.feature_importances_
     results = pd.Series(importances,

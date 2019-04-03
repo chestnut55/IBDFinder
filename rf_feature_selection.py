@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_score, train_test_split, StratifiedKFold
 
 import utils
@@ -14,7 +15,8 @@ def rf_feature_selection(X, y):
     df = pd.DataFrame(columns=['Accuracy', 'AUC', 'F1', 'Precision', 'Recall',
                                'accuracy_std', 'auc_std', 'f1_std', 'precision_std', 'recall_std'])
 
-    rf = RandomForestClassifier(random_state=0, n_estimators=200)
+    rf = RandomForestClassifier(random_state=0, n_estimators=100)
+    # lr = LogisticRegression(random_state=0)
     cv = StratifiedKFold(n_splits=5, random_state=0)
     for i in np.arange(10, 200, 5):
         sub_results = results[:i]

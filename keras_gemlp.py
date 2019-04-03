@@ -8,6 +8,8 @@ from sklearn.model_selection import train_test_split
 from keras.regularizers import l1, l2, l1_l2
 from sklearn.metrics import roc_auc_score
 import early_stop
+import tensorflow as tf
+
 
 import utils
 from sparse_layer import Sparse
@@ -69,6 +71,27 @@ def gemlp(x_train, x_test, y_train, y_test, left, right):
     # plt.show()
 
     y_predict = model.predict(x_test)
+
+    left_embedding_layer_weights = model.layers[3].get_weights()[0]
+    right_embedding_layer_weights = model.layers[6].get_weights()[0]
+
+    gamma_c = 20
+    gamma_numerator = np.sum(right, axis=0)
+    gamma_denominator = np.sum(right, axis=0)
+    gamma_numerator[np.where(gamma_numerator > gamma_c)] = gamma_c
+
+    var_left = tf.reduce_sum(tf.abs(tf.multiply(left_embedding_layer_weights, right)), 0)
+    var_right = tf.reduce_sum(tf.abs(right_embedding_layer_weights), 1)
+    var_importance = tf.add(tf.multiply(tf.multiply(var_left, gamma_numerator), 1. / gamma_denominator),
+                            tf.multiply(tf.multiply(var_right, gamma_numerator), 1. / gamma_denominator))
+
+    with tf.Session() as sess:
+        sess.run(tf.global_variables_initializer())
+        var_imp = sess.run([var_importance])
+        var_imp = np.reshape(var_imp, [np.shape(x_train)[1]])
+        np.savetxt("output/l1_weights.txt", left_embedding_layer_weights, delimiter=",")
+        np.savetxt("output/l2_weights.txt", right_embedding_layer_weights, delimiter=",")
+        np.savetxt('output/var_ibd.csv', var_imp, delimiter=",")
 
     return y_predict, test_loss, test_acc
 

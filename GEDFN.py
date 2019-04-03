@@ -5,7 +5,7 @@ import tensorflow as tf
 from keras.utils import to_categorical
 from sklearn import metrics
 from sklearn.metrics import recall_score, f1_score, roc_auc_score, precision_score
-from sklearn.model_selection import StratifiedKFold
+from sklearn.model_selection import StratifiedKFold,train_test_split
 from sklearn.utils import shuffle
 import tensorflow.contrib as contrib
 
@@ -131,7 +131,7 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
                                    y_tmp[i * batch_size:i * batch_size + batch_size]
 
                 _, c = sess.run([optimizer, cost], feed_dict={x: batch_x, y: batch_y,
-                                                              keep_prob: 0.5,
+                                                              keep_prob: 0.9,
                                                               lr: learning_rate
                                                               })
                 # Compute average loss
@@ -179,8 +179,6 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
 if __name__ == "__main__":
 
     X, y, left, right = utils.load()
+    x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=0)
+    gedfn(x_train, x_test, to_categorical(y_train), to_categorical(y_test), right, right)
 
-    skf = StratifiedKFold(n_splits=5, random_state=0)
-    for train_idx, test_idx in skf.split(X, y):
-        x_train, x_test, y_train, y_test = X.ix[train_idx, :], X.ix[test_idx, :], y[train_idx], y[test_idx]
-        gedfn(x_train, x_test, to_categorical(y_train), to_categorical(y_test), right, right)
