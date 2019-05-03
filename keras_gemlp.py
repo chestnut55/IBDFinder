@@ -75,7 +75,7 @@ def gemlp(x_train, x_test, y_train, y_test, left, right):
     left_embedding_layer_weights = model.layers[3].get_weights()[0]
     right_embedding_layer_weights = model.layers[6].get_weights()[0]
 
-    gamma_c = 20
+    gamma_c = 50
     gamma_numerator = np.sum(right, axis=0)
     gamma_denominator = np.sum(right, axis=0)
     gamma_numerator[np.where(gamma_numerator > gamma_c)] = gamma_c

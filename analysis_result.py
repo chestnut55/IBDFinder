@@ -95,6 +95,9 @@ def plot_cophenetic_distance():
                                             fontsize=12, color=[colors[0],colors[2]])
     ax.set_xlabel("#Features", fontsize=12)
     ax.set_ylabel("Distance", fontsize=12)
+
+    plt.savefig('output/Cophenetic.png')
+
     plt.show()
 
 

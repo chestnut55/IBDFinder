@@ -40,7 +40,6 @@ for index, (value1, value2) in enumerate(zip(nodesA, nodesB)):
     #             df_[ind][value1] = 1
 
 # df_ = df_ - np.diag(np.diag(df_))
-print('finish---------------------------')
 df_.to_csv('sparcc_otu_adj.txt', sep='\t')
 print(utils.check_symmetric(df_.values))
 

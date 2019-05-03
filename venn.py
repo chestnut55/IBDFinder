@@ -236,10 +236,11 @@ def venn4(labels, names=['A', 'B', 'C', 'D'], **options):
     colors = options.get('colors', [default_colors[i] for i in range(4)])
     figsize = options.get('figsize', (12, 12))
     dpi = options.get('dpi', 96)
-    fontsize = options.get('fontsize', 14)
-    
-    fig = plt.figure(0, figsize=figsize, dpi=dpi)
-    ax = fig.add_subplot(111, aspect='equal')
+    fontsize = options.get('fontsize', 12)
+    ax = options.get('ax')
+    fig = options.get('ax')
+    # fig = plt.figure(0, figsize=figsize, dpi=dpi)
+    # ax = fig.add_subplot(111, aspect='equal')
     ax.set_axis_off()
     ax.set_ylim(bottom=0.0, top=1.0)
     ax.set_xlim(left=0.0, right=1.0)
@@ -270,7 +271,7 @@ def venn4(labels, names=['A', 'B', 'C', 'D'], **options):
     # draw_text(fig, ax, 0.18, 0.83, names[1], colors[1], fontsize=fontsize)
     # draw_text(fig, ax, 0.82, 0.83, names[2], colors[2], fontsize=fontsize)
     # draw_text(fig, ax, 0.87, 0.18, names[3], colors[3], fontsize=fontsize)
-    leg = ax.legend(names, loc='best', fancybox=True)
+    leg = ax.legend(names, loc='best', fancybox=True,fontsize=12)
     leg.get_frame().set_alpha(0.5)
     
     return fig, ax

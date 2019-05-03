@@ -520,6 +520,7 @@
       <w>.__C__atomicVector</w>
       <w>.__C__besselkernel</w>
       <w>.__C__biom</w>
+      <w>.__C__brob</w>
       <w>.__C__builtin</w>
       <w>.__C__bzfile</w>
       <w>.__C__call</w>
@@ -600,6 +601,7 @@
       <w>.__C__genericFunctionWithTrace</w>
       <w>.__C__glm</w>
       <w>.__C__glm.null</w>
+      <w>.__C__glub</w>
       <w>.__C__groupGenericFunction</w>
       <w>.__C__groupGenericFunctionWithTrace</w>
       <w>.__C__gzcon</w>
@@ -756,6 +758,7 @@
       <w>.__C__summary.mle</w>
       <w>.__C__summary.table</w>
       <w>.__C__summaryDefault</w>
+      <w>.__C__swift</w>
       <w>.__C__symmetricMatrix</w>
       <w>.__C__table</w>
       <w>.__C__tanhkernel</w>
@@ -1149,6 +1152,7 @@
       <w>Brazzaville</w>
       <w>BreastCancer</w>
       <w>Brisbane</w>
+      <w>Brobdingnag</w>
       <w>Broken_Hill</w>
       <w>Brunei</w>
       <w>Brussels</w>
@@ -1294,6 +1298,8 @@
       <w>DESeqTransform</w>
       <w>DEoptimR</w>
       <w>DGEList</w>
+      <w>DLLfunc</w>
+      <w>DLLres</w>
       <w>DNA</w>
       <w>DNAMultipleAlignment</w>
       <w>DNAString</w>
@@ -2267,6 +2273,7 @@
       <w>S3Part</w>
       <w>S4Vectors</w>
       <w>SAX1</w>
+      <w>SCOC</w>
       <w>SDM</w>
       <w>SIGCHLD</w>
       <w>SIGCONT</w>
@@ -2830,6 +2837,8 @@
       <w>`.__T__GOID:AnnotationDbi`</w>
       <w>`.__T__H0:kernlab`</w>
       <w>`.__T__IQR:BiocGenerics`</w>
+      <w>`.__T__Im:base`</w>
+      <w>`.__T__Im&lt;-:Brobdingnag`</w>
       <w>`.__T__KEGG2heatmap:annotate`</w>
       <w>`.__T__KEGGFrame:AnnotationDbi`</w>
       <w>`.__T__KEGGmnplot:annotate`</w>
@@ -2841,6 +2850,7 @@
       <w>`.__T__Map:BiocGenerics`</w>
       <w>`.__T__Math2:methods`</w>
       <w>`.__T__Math:base`</w>
+      <w>`.__T__Mod:base`</w>
       <w>`.__T__NCOL:base`</w>
       <w>`.__T__NROW:base`</w>
       <w>`.__T__NSBS:S4Vectors`</w>
@@ -2858,6 +2868,8 @@
       <w>`.__T__Radbound:kernlab`</w>
       <w>`.__T__Rattribnames:AnnotationDbi`</w>
       <w>`.__T__Rattribnames&lt;-:AnnotationDbi`</w>
+      <w>`.__T__Re:base`</w>
+      <w>`.__T__Re&lt;-:Brobdingnag`</w>
       <w>`.__T__Reduce:BiocGenerics`</w>
       <w>`.__T__Rkeyname:AnnotationDbi`</w>
       <w>`.__T__Rkeys:AnnotationDbi`</w>
@@ -3278,7 +3290,9 @@
       <w>`.__T__getHMedian:hexbin`</w>
       <w>`.__T__getKEGGFrameData:AnnotationDbi`</w>
       <w>`.__T__getListElement:S4Vectors`</w>
+      <w>`.__T__getP:Brobdingnag`</w>
       <w>`.__T__getSeq:Biostrings`</w>
+      <w>`.__T__getX:Brobdingnag`</w>
       <w>`.__T__get_sample:phyloseq`</w>
       <w>`.__T__get_taxa:phyloseq`</w>
       <w>`.__T__granges:GenomicRanges`</w>
@@ -3426,6 +3440,7 @@
       <w>`.__T__matchProbePair:Biostrings`</w>
       <w>`.__T__matrixClass:DelayedArray`</w>
       <w>`.__T__matrix_element_type:biomformat`</w>
+      <w>`.__T__max:Brobdingnag`</w>
       <w>`.__T__max:base`</w>
       <w>`.__T__maxScore:Biostrings`</w>
       <w>`.__T__maxWeights:Biostrings`</w>
@@ -3444,6 +3459,7 @@
       <w>`.__T__metadata&lt;-:S4Vectors`</w>
       <w>`.__T__mget:BiocGenerics`</w>
       <w>`.__T__mid:IRanges`</w>
+      <w>`.__T__min:Brobdingnag`</w>
       <w>`.__T__min:base`</w>
       <w>`.__T__minScore:Biostrings`</w>
       <w>`.__T__minWeights:Biostrings`</w>
@@ -3586,6 +3602,7 @@
       <w>`.__T__prob.model:kernlab`</w>
       <w>`.__T__probesToChrom:annotate`</w>
       <w>`.__T__processingInstruction.SAX:XML`</w>
+      <w>`.__T__prod:Brobdingnag`</w>
       <w>`.__T__prod:base`</w>
       <w>`.__T__profile:stats`</w>
       <w>`.__T__promoters:IRanges`</w>
@@ -3618,6 +3635,7 @@
       <w>`.__T__qr:base`</w>
       <w>`.__T__quality:Biostrings`</w>
       <w>`.__T__quantile:stats`</w>
+      <w>`.__T__range:Brobdingnag`</w>
       <w>`.__T__range:base`</w>
       <w>`.__T__ranges:IRanges`</w>
       <w>`.__T__ranges&lt;-:IRanges`</w>
@@ -3741,6 +3759,7 @@
       <w>`.__T__showAsCell:S4Vectors`</w>
       <w>`.__T__sidePage:annotate`</w>
       <w>`.__T__sigest:kernlab`</w>
+      <w>`.__T__sign&lt;-:Brobdingnag`</w>
       <w>`.__T__signif:base`</w>
       <w>`.__T__simplify:DelayedArray`</w>
       <w>`.__T__size:kernlab`</w>
@@ -3773,6 +3792,7 @@
       <w>`.__T__sqlData:DBI`</w>
       <w>`.__T__sqlInterpolate:DBI`</w>
       <w>`.__T__sqlParseVariables:DBI`</w>
+      <w>`.__T__sqrt:base`</w>
       <w>`.__T__stack:utils`</w>
       <w>`.__T__start:stats`</w>
       <w>`.__T__start&lt;-:BiocGenerics`</w>
@@ -3795,6 +3815,7 @@
       <w>`.__T__substr:base`</w>
       <w>`.__T__substring:base`</w>
       <w>`.__T__subviews:IRanges`</w>
+      <w>`.__T__sum:Brobdingnag`</w>
       <w>`.__T__sum:base`</w>
       <w>`.__T__summary:base`</w>
       <w>`.__T__sweep:base`</w>
@@ -3955,6 +3976,7 @@
       <w>`E&lt;-`</w>
       <w>`Encoding&lt;-`</w>
       <w>`Graph&lt;-`</w>
+      <w>`Im&lt;-`</w>
       <w>`Lkeys&lt;-`</w>
       <w>`Missing&lt;-`</w>
       <w>`Model&lt;-`</w>
@@ -3962,6 +3984,7 @@
       <w>`Port-au-Prince`</w>
       <w>`Porto-Novo`</w>
       <w>`Rattribnames&lt;-`</w>
+      <w>`Re&lt;-`</w>
       <w>`Rkeys&lt;-`</w>
       <w>`S3Class&lt;-`</w>
       <w>`S3Part&lt;-`</w>
@@ -4275,6 +4298,7 @@
       <w>`setStrata&lt;-`</w>
       <w>`setType&lt;-`</w>
       <w>`setWithin&lt;-`</w>
+      <w>`sign&lt;-`</w>
       <w>`sizeFactors&lt;-`</w>
       <w>`slot&lt;-`</w>
       <w>`snpCall&lt;-`</w>
@@ -4731,6 +4755,7 @@
       <w>apqe</w>
       <w>apropos</w>
       <w>aqListGOIDs</w>
+      <w>aquaphy</w>
       <w>ar</w>
       <w>ar.burg</w>
       <w>ar.mle</w>
@@ -4860,6 +4885,7 @@
       <w>as.bitwhich.ri</w>
       <w>as.bitwhich.which</w>
       <w>as.blob</w>
+      <w>as.brob</w>
       <w>as.call</w>
       <w>as.character</w>
       <w>as.character.AAbin</w>
@@ -4962,6 +4988,7 @@
       <w>as.fractions</w>
       <w>as.function</w>
       <w>as.function.default</w>
+      <w>as.glub</w>
       <w>as.graphicsAnnot</w>
       <w>as.hclust</w>
       <w>as.hclust.phylo</w>
@@ -5699,6 +5726,7 @@
       <w>brewer_pal</w>
       <w>brier</w>
       <w>brisa</w>
+      <w>brob</w>
       <w>browsable</w>
       <w>browseEnv</w>
       <w>browseURL</w>
@@ -5924,10 +5952,13 @@
       <w>cbind2</w>
       <w>cbindX</w>
       <w>cbreaks</w>
+      <w>cbrob</w>
       <w>cca</w>
       <w>ccat</w>
       <w>ccf</w>
       <w>cch</w>
+      <w>ccl4data</w>
+      <w>ccl4model</w>
       <w>cd4</w>
       <w>cd4.nested</w>
       <w>cdplot</w>
@@ -6146,6 +6177,7 @@
       <w>classifyTestsT</w>
       <w>claw54</w>
       <w>cldem</w>
+      <w>cleanEventTimes</w>
       <w>clean_cache</w>
       <w>clean_dll</w>
       <w>clean_vignettes</w>
@@ -6940,6 +6972,7 @@
       <w>darken</w>
       <w>darker</w>
       <w>darwin</w>
+      <w>daspk</w>
       <w>dat</w>
       <w>data</w>
       <w>data.class</w>
@@ -7096,6 +7129,7 @@
       <w>de.ncols</w>
       <w>de.restore</w>
       <w>de.setup</w>
+      <w>deSolve</w>
       <w>de_bruijn_graph</w>
       <w>deaths</w>
       <w>debounce</w>
@@ -7131,6 +7165,7 @@
       <w>decorana</w>
       <w>decostand</w>
       <w>decrypt_envelope</w>
+      <w>dede</w>
       <w>def</w>
       <w>default.stringsAsFactors</w>
       <w>defaultClusterOptions</w>
@@ -7379,6 +7414,9 @@
       <w>diagN2U</w>
       <w>diagU2N</w>
       <w>diagX</w>
+      <w>diagnostics</w>
+      <w>diagnostics.deSolve</w>
+      <w>diagnostics.default</w>
       <w>diagresidues</w>
       <w>diagtest</w>
       <w>dialogViewer</w>
@@ -8019,6 +8057,8 @@
       <w>estimethod</w>
       <w>estrada.class</w>
       <w>ethanol</w>
+      <w>euler</w>
+      <w>euler.1D</w>
       <w>euro</w>
       <w>euro123</w>
       <w>eurodist</w>
@@ -8695,6 +8735,7 @@
       <w>ge</w>
       <w>gearymoran</w>
       <w>gehan</w>
+      <w>geigen</w>
       <w>gemsen_MvsF</w>
       <w>genD</w>
       <w>genas</w>
@@ -9129,6 +9170,7 @@
       <w>getOption.default</w>
       <w>getOrgNameNCode</w>
       <w>getOrgPkgForSchema</w>
+      <w>getP</w>
       <w>getPMID</w>
       <w>getPMInfo</w>
       <w>getPackage</w>
@@ -9277,6 +9319,7 @@
       <w>getWritablePath.Arguments</w>
       <w>getWritablePathname</w>
       <w>getWritablePathname.Arguments</w>
+      <w>getX</w>
       <w>getXIncludes</w>
       <w>getXMLErrors</w>
       <w>getYear</w>
@@ -9313,6 +9356,7 @@
       <w>gettext</w>
       <w>gettextf</w>
       <w>getwd</w>
+      <w>gevalues</w>
       <w>gevlss</w>
       <w>geyser</w>
       <w>geyser.round</w>
@@ -9395,6 +9439,7 @@
       <w>glsControl</w>
       <w>glsEstimate</w>
       <w>glsStruct</w>
+      <w>glub</w>
       <w>glue</w>
       <w>glue_col</w>
       <w>glue_collapse</w>
@@ -9427,6 +9472,7 @@
       <w>gpar</w>
       <w>gplot.hexbin</w>
       <w>gplots</w>
+      <w>gqz</w>
       <w>grDevices</w>
       <w>grSoftVersion</w>
       <w>grType</w>
@@ -9668,6 +9714,11 @@
       <w>gsub_file</w>
       <w>gsub_files</w>
       <w>gsummary</w>
+      <w>gsvd</w>
+      <w>gsvd.D1</w>
+      <w>gsvd.D2</w>
+      <w>gsvd.R</w>
+      <w>gsvd.oR</w>
       <w>gt</w>
       <w>gtable</w>
       <w>gtable_add_col_space</w>
@@ -10433,6 +10484,7 @@
       <w>is.bit</w>
       <w>is.bitwhich</w>
       <w>is.bree.correct</w>
+      <w>is.brob</w>
       <w>is.browsable</w>
       <w>is.call</w>
       <w>is.centrosymmetric</w>
@@ -10480,6 +10532,7 @@
       <w>is.function</w>
       <w>is.ggplot</w>
       <w>is.ggproto</w>
+      <w>is.glub</w>
       <w>is.graphical.degree.sequence</w>
       <w>is.grob</w>
       <w>is.grouped_df</w>
@@ -11141,6 +11194,8 @@
       <w>ladderize</w>
       <w>lag</w>
       <w>lag.plot</w>
+      <w>lagderiv</w>
+      <w>lagvalue</w>
       <w>lakers</w>
       <w>lambda.interp</w>
       <w>lambda.r</w>
@@ -11633,6 +11688,10 @@
       <w>lseq</w>
       <w>lsf.str</w>
       <w>lsfit</w>
+      <w>lsoda</w>
+      <w>lsodar</w>
+      <w>lsode</w>
+      <w>lsodes</w>
       <w>lssvm</w>
       <w>lst</w>
       <w>lst_</w>
@@ -11914,6 +11973,9 @@
       <w>matmin</w>
       <w>matorder</w>
       <w>matplot</w>
+      <w>matplot.0D</w>
+      <w>matplot.1D</w>
+      <w>matplot.deSolve</w>
       <w>matplotlib</w>
       <w>matpoints</w>
       <w>matprod_simple_triplet_matrix</w>
@@ -12493,6 +12555,7 @@
       <w>nearcor</w>
       <w>neardate</w>
       <w>nearest</w>
+      <w>nearestEvent</w>
       <w>nearestReftoX</w>
       <w>nearestTSS</w>
       <w>neat</w>
@@ -12877,6 +12940,11 @@
       <w>odb_objects</w>
       <w>odd</w>
       <w>odds</w>
+      <w>ode</w>
+      <w>ode.1D</w>
+      <w>ode.2D</w>
+      <w>ode.3D</w>
+      <w>ode.band</w>
       <w>oecosimu</w>
       <w>off</w>
       <w>off.Verbose</w>
@@ -13496,6 +13564,7 @@
       <w>plogis</w>
       <w>plogr</w>
       <w>plot</w>
+      <w>plot.1D</w>
       <w>plot.cv.glmnet</w>
       <w>plot.default</w>
       <w>plot.design</w>
@@ -13914,6 +13983,7 @@
       <w>print.anova.gam</w>
       <w>print.bit</w>
       <w>print.bitwhich</w>
+      <w>print.brob</w>
       <w>print.by</w>
       <w>print.char.matrix</w>
       <w>print.condition</w>
@@ -13926,6 +13996,7 @@
       <w>print.function</w>
       <w>print.gam</w>
       <w>print.glmnet</w>
+      <w>print.glub</w>
       <w>print.hexmode</w>
       <w>print.igraph</w>
       <w>print.libraryIQR</w>
@@ -14313,6 +14384,7 @@
       <w>rad.zipf</w>
       <w>rad.zipfbrot</w>
       <w>radarImage</w>
+      <w>radau</w>
       <w>radfit</w>
       <w>radial.phylog</w>
       <w>radioButtons</w>
@@ -14982,6 +15054,9 @@
       <w>riskcomp</w>
       <w>rivers</w>
       <w>rjson</w>
+      <w>rk</w>
+      <w>rk4</w>
+      <w>rkMethod</w>
       <w>rlang</w>
       <w>rlatin</w>
       <w>rle</w>
@@ -17279,6 +17354,7 @@
       <w>timestampOff.Verbose</w>
       <w>timestampOn</w>
       <w>timestampOn.Verbose</w>
+      <w>timestep</w>
       <w>timetaken</w>
       <w>tintoodiel</w>
       <w>tip_glom</w>
@@ -18229,6 +18305,7 @@
       <w>vmatchPDict</w>
       <w>vmatchPattern</w>
       <w>vmembers</w>
+      <w>vode</w>
       <w>volcano</w>
       <w>volcanoplot</w>
       <w>volume</w>
@@ -18760,6 +18837,7 @@
       <w>zscoreHyper</w>
       <w>zscoreNBinom</w>
       <w>zscoreT</w>
+      <w>zvode</w>
     </words>
   </dictionary>
 </component>

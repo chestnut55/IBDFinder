@@ -18,8 +18,8 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
         layer_1 = tf.add(tf.matmul(x, tf.multiply(weights['h1'], left_adj)), biases['b1'])
         # layer_1 = tf.add(tf.subtract(tf.matmul(x, weights['h1']), tf.linalg.tensor_diag_part(weights['h1'])),
         #                  biases['b1'])
-        layer_1 = tf.nn.leaky_relu(layer_1)
-        layer_1 = tf.nn.dropout(layer_1, keep_prob=0.9)
+        layer_1 = tf.nn.relu(layer_1)
+        layer_1 = tf.nn.dropout(layer_1, keep_prob=keep_prob)
 
         # layer_2 = tf.add(tf.matmul(layer_1, tf.multiply(weights['h2'], right_adj)), biases['b2'])
         layer_2 = tf.add(tf.matmul(layer_1, weights['h2']), biases['b2'])
@@ -50,7 +50,7 @@ def gedfn(x_train, x_test, y_train, y_test, left_adj, right_adj):
     ## the constant limit for feature selection
     # partition_left = np.loadtxt('output/otu_adj.txt', dtype=int, delimiter=None)
     # partition_right = np.loadtxt('output/mic_otu_adj.txt', dtype=int, delimiter=None)
-    gamma_c = 20
+    gamma_c = 50
     gamma_numerator = np.sum(left_adj, axis=0)
     gamma_denominator = np.sum(left_adj, axis=0)
     gamma_numerator[np.where(gamma_numerator > gamma_c)] = gamma_c

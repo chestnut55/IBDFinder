@@ -10,7 +10,7 @@ def plot():
     _df_gedfn = df_gedfn[['Accuracy', 'AUC', 'Precision', 'Recall']]
     _df_gedfn.plot(linestyle='-', ax=axes[0])
     axes[0].set_ylim([0.5, 1])
-    axes[0].set_xticklabels(np.arange(10, 200, 5))
+    axes[0].set_xticklabels(np.arange(10, 100, 5))
     axes[0].set_xlabel('#feature')
     axes[0].set_title('GEMLP')
 
@@ -18,7 +18,7 @@ def plot():
     _df_rf = df_rf[['Accuracy', 'AUC', 'Precision', 'Recall']]
     _df_rf.plot(linestyle='-', ax=axes[1])
     axes[1].set_ylim([0.5, 1])
-    axes[1].set_xticklabels(np.arange(10, 200, 5))
+    axes[1].set_xticklabels(np.arange(10, 100, 5))
     axes[1].set_xlabel('#feature')
     axes[1].set_title('Random Forest')
 

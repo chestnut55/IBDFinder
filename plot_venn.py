@@ -76,9 +76,22 @@ def plot_venn3():
 
 
 def plot_venn4():
+    fig, axes = plt.subplots(1, 2, figsize=(12, 8))
+
     df = pd.read_csv('output/venn.txt', sep=',')
     labels = venn.get_labels([df['rfe'].values, df['mRMR'].values, df['rf'].values, df['gedfn'].values])
-    venn.venn4(labels, names=['RFE', 'mRMR', 'RF', 'GEMLP'], figsize=(8, 8))
+    venn.venn4(labels, names=['RFE', 'mRMR', 'RF', 'GEMLP'], fig=fig,  ax=axes[0])
+
+    df_gedfn = pd.read_csv('output/feature_selection_result.csv', header=0, sep=',', index_col=0)
+    df_gedfn = df_gedfn.head(9)
+    _df_gedfn = df_gedfn[['Accuracy', 'AUC', 'Precision', 'Recall']]
+    _df_gedfn.plot(linestyle='-',marker='.', ax=axes[1],color=['r','g','b','y'])
+    axes[1].set_ylim([0.5, 1])
+    axes[1].set_xticklabels(np.arange(10, 50, 5))
+    axes[1].set_xlabel('#feature')
+    axes[1].set_title('GEMLP')
+
+    fig.tight_layout()
     plt.savefig('output/venn4.png')
     plt.show()
 
